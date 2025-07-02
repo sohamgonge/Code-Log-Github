@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise- Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(175, 237, 175, 0.51);
+        }
+
+        nav {
+            box-sizing: border-box;
+            background-color: antiquewhite;
+            width: 100vw;
+            height: 10vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .content {
+            background-color: lightcoral;
+            width: 100vw;
+            height: 90vh;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .box1,
+        .box2 {
+            width: 40%;
+            height: 80%;
+            background-color: lightblue;
+            margin: 5% 4.5%;
+            /* border: 2px solid black; */
+            display: inline-block;
+        }
+
+        .welcome {
+            box-sizing: border-box;
+            background-color: lightgreen;
+            text-align: center;
+            width: 80%;
+            height: 20vh;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 15%;
+            font-size: 3.5rem;
+            font-family: poppins, sans-serif;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+            border-radius: 40px;
+        }
+
+        .assistant {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            border-radius: 50px;
+            background-color: white;
+
+        }
+
+        .assistant img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+
+        .footer {
+            width: 100%;
+            height: 10vh;
+            background-color: lightgray;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="navigation">
+
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="box1">
+
+        </div>
+        <div class="box2">
+
+        </div>
+    </div>
+    <div class="welcome">
+        Welcome to this Sigma Web Development Express
+    </div>
+    <div class="assistant">
+        <img src="https://img.freepik.com/free-vector/flat-design-communication-logo-template_23-2149845377.jpg?semt=ais_hybrid&w=740"
+            alt="google assistantimage">
+    </div>
+    <footer class="footer">
+
+    </footer>
+</body>
+
+</html>

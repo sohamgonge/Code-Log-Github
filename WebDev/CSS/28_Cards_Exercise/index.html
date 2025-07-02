@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: rgba(197, 223, 245, 0.584);
+        }
+
+        .card {
+            width: 380px;
+            height: 600px;
+            border: 1px solid lightgray;
+            background-color: white;
+            border-radius: 14px;
+            margin: auto;
+            margin-top: 40px;
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+            padding: 10px 10px 10px 10px;
+
+        }
+
+        img {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            border-radius: 14px;
+        }
+
+        .imgcard {
+
+            align-items: center;
+            padding-bottom: 4px;
+            height: 45%;
+
+
+        }
+
+        .tagrow {
+
+            display: flex;
+            justify-content: start;
+            width: 55%;
+            justify-items: center;
+            margin-top: 18px;
+            /* margin-bottom: 10px; */
+            margin-left: 10px;
+        }
+
+        .tag {
+
+            border: 0.2px solid rgb(197, 197, 197);
+            border-radius: 23px;
+            padding: 2px 8px;
+            font-family: poppins, sans-serif;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            color: rgba(115, 115, 115, 0.685);
+            font-weight: 400;
+
+
+        }
+
+        .title {
+            font-family: poppins, sans-serif;
+            font-size: 1.8rem;
+            /* width: 95%; */
+            height: 12%;
+            display: grid;
+            /* justify-content: start; */
+            font-weight: 550;
+            text-align: left;
+            align-items: center;
+            margin: 10px 0px 20px 0px;
+            color: rgb(61, 69, 72);
+        }
+
+        .desciption {
+            font-family: poppins, sans-serif;
+            font-size: 1rem;
+            color: rgba(115, 115, 115, 0.685);
+            margin-top: 10px;
+            /* letter-spacing: -0.5px; */
+            /* line-height: 1.2rem; */
+            margin-bottom: 10px;
+
+        }
+
+        .all {
+            display: inline-block;
+            margin: 10px 10px 0px 10px
+        }
+
+        .link {
+            margin-top: 20px;
+            /* display: flex; */
+            /* justify-content: start; */
+            /* align-items: center; */
+            display: flex;
+            height: 12%;
+            justify-content: center;
+            margin-top: 25px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 162, 226);
+            font-family: poppins, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            /* border: 1px solid skyblue; */
+            background-color: rgba(135, 207, 235, 0.196);
+            padding: 15px 28px;
+            border-radius: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="imgcard">
+            <img src="card1.png" alt="mall img">
+        </div>
+        <div class="tagrow">
+            <span class="tag">
+                Nature
+            </span>
+            <span class="tag">
+                Lake
+            </span>
+        </div>
+        <div class="all">
+
+            <div class="title">
+                Lorem, ipsum dolor.
+            </div>
+            <div class="desciption">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ea praesentium eos tempore perferendis,
+                vero
+                modi voluptatibus harum sapiente hic.
+            </div>
+            <div class="link">
+                <a href="http://lumon.space">Read More</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

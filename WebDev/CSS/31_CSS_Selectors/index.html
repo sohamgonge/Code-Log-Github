@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selectors</title>
+    <style>
+        .box::first-line {
+            color: red;
+        }
+
+        /* .boxes * {
+            border: 2px solid black;
+        }
+
+        [data-color="primary"] {
+            margin-top: 25px;
+
+        }
+
+        .boxes, [data-color="primary"] {
+            margin-top: 25px;
+        } */
+
+        /* .box:nth-child(odd){
+        background-color: red;
+    } */
+        /* .box:nth-last-child(odd){
+        background-color: red;
+    } */
+        .boxes::before {
+            content: "soham is good";
+            /* content: "soham is also good"; */
+        }
+
+        .boxes::after {
+            /* content: "soham is good"; */
+            content: "soham is also good";
+        }
+
+        ::selection {
+            color: aqua;
+            background-color: black;
+        }
+        .box::first-letter{
+            color: purple;
+            font-size: 20px;
+        }
+        input::placeholder{
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div data-color="primary" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. A amet quo dolor
+            perferendis ea? Repellat placeat laboriosam eos, qui ipsa distinctio vero dolores a. Consequuntur doloribus
+            ut pariatur nobis. Nulla esse totam id, eos dolores amet accusamus? Quia, unde amet dolores aspernatur minus
+            perferendis explicabo id quisquam culpa maiores asperiores inventore quasi minima incidunt totam eum odio
+            sapiente quibusdam facilis, nesciunt, illum ad vel aut! Unde debitis neque dolorem aut et mollitia corrupti
+            praesentium natus consequuntur, fugit architecto beatae, vel eum quo perferendis excepturi magnam
+            repellendus hic, fugiat minima. Numquam quia soluta culpa incidunt neque itaque explicabo eveniet quas
+            beatae dolores cum totam placeat obcaecati, veritatis dolore tempore est quod amet similique porro possimus!
+            Mollitia, veniam pariatur sapiente possimus facere ad. Veniam dolorem quod consequatur! Obcaecati
+            cupiditate, temporibus vitae nisi beatae placeat quae animi fugit, eum nesciunt, quam libero dolores error
+            dolorem ut est non et vel. Natus, voluptatibus dolorem quae laudantium in vitae aliquid provident iusto
+            doloribus libero consequatur necessitatibus delectus eveniet rerum facere neque modi commodi alias dolores
+            at voluptatem ipsum nulla dolor totam. Numquam ipsum vel doloribus pariatur libero, impedit corrupti harum
+            sint excepturi ex quidem sit delectus beatae aspernatur temporibus maiores modi accusantium ad repudiandae.
+            Delectus quis numquam doloremque laboriosam dolorem maiores cum voluptatum ullam, totam aspernatur, dolores
+            cumque nostrum molestiae consequatur! Asperiores a voluptatem ipsum. Culpa pariatur vitae consectetur vero,
+            dolorem nihil quae cupiditate unde, magnam quam error saepe iste quasi aliquam sed iusto, quos harum
+            voluptas dignissimos recusandae mollitia! Totam, assumenda. Provident perspiciatis commodi enim repudiandae
+            modi at asperiores possimus sunt? Magni dolorem sed ipsa itaque aperiam dolore beatae odio sit unde libero?
+            Esse unde delectus explicabo eos officia, neque minus, blanditiis corporis autem, dolorum numquam saepe
+            tempora eligendi accusamus doloribus excepturi. Optio facere eveniet doloribus corporis earum accusantium
+            tempora incidunt libero ex hic, ut dolores dolor necessitatibus aspernatur error quod et atque voluptatibus
+            maiores quidem sint culpa eaque. Nam aspernatur illo vero, doloribus iure error officia cupiditate corrupti
+            eveniet non tempora hic vel fuga corporis quia natus. Praesentium cupiditate architecto amet! Veritatis
+            minima nobis rerum quae laudantium!</div>
+        <div class="box">Hey i am a box</div>
+        <div class="box">Hey i am a box</div>
+        <div class="box">Hey i am a box</div>
+        <input type="text" placeholder="type your name here">
+    </div>
+
+</body>
+
+</html>
