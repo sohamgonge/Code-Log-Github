@@ -4,5 +4,18 @@ int main()
 {
     // Your code here
     printf("Hello, World!\n");
+
+    // Operator Precedence
+    /*
+    Priority    Operator
+    1st         !
+    2nd         * / %
+    3rd         + -
+    4th         < > <= >=
+    5th         == !=
+    6th         &&
+    7th         ||
+    8th         =
+    */
     return 0;
 }
