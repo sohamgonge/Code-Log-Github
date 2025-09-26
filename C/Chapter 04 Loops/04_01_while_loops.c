@@ -10,6 +10,6 @@ int main()
         printf("The value of a is %d\n", a);
         a++;
     }
-
+    // i++ is i = i+1
     return 0;
 }
