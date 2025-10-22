@@ -1,28 +1,29 @@
-#include<stdio.h>
+#include <stdio.h>
 
-void printarr(int parr[][], int n, int l){      
+void printarr(int n, int l, int parr[n][l])
+{
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < l; j++)
         {
-            printf("Enter the element of row %d and column %d is %d", i, j, parr[i][j]);
-            
+            printf("%d ", parr[i][j]);
         }
-        
+        printf("\n");
     }
-    
 }
-int main(){
+int main()
+{
     int dnum[2][3];
-    for (int i = 0; i < 2; i++)
+    int i, j;
+    for (i = 0; i < 2; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
-            printf("Enter the element of row %d and column %d", i, j);
-            scanf("%d", dnum[i][j]);
+            printf("Enter the element of row %d and column %d : ", i + 1, j + 1);
+            scanf("%d", &dnum[i][j]);
         }
-        
     }
-    
+    printarr(i, j, dnum);
+
     return 0;
 }
