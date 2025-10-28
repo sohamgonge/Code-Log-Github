@@ -1,0 +1,10 @@
+a = int(input("Please Enter a number"))
+b = int(input("Please Enter another number"))
+
+print(f"{a} + {b} is ", a + b)
+print(f"{a} - {b} is ", a - b)
+print(f"{a} * {b} is ", a * b)
+print(f"{a} / {b} is ", a / b)
+print(f"{a} % {b} is ", a % b)
+print(f"{a} ** {b} is ", a ** b)
+print(f"{a}// {b} is ", a //b)
