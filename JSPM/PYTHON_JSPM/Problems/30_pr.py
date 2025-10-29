@@ -1,0 +1,5 @@
+a = input("Enter :")
+a = a.lower()
+print(f"{a} : in lower case")
+a = a.upper()
+print(f"{a} : in upper case")
