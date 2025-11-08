@@ -4,6 +4,8 @@ int main()
 {
     int a, b;
     printf("Enter a number: ");
+    printf("Enter a number: ");
+    printf("Enter a number: ");
     scanf("%d", &a);
 
     if (a % 2 == 0)
@@ -14,6 +16,7 @@ int main()
     {
         printf("%d is odd\n", a);
     }
+    printf("");
 
     return 0;
 }
