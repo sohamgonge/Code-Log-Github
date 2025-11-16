@@ -1,13 +1,16 @@
 #include <stdio.h>
-
-int main()
+#include <stdbool.h>
+bool isPalindrome(int x)
 {
-    int temp, x = -121, i = 0, j;
+    int temp = x, i = 0, j;
     if (x < 0)
     {
-        // return false;
+        return false;
     }
-
+    if (x == 0)
+    {
+        return true;
+    }
     temp = x;
     while (temp != 0)
     {
@@ -21,24 +24,30 @@ int main()
         temp = x % 10;
         a[j] = temp;
         x /= 10;
-        printf("%d\n", temp);
-    }
-    for (int k = 0; k < i; k++)
-    {
-        printf("value of k %d\n", a[k]);
     }
     j = (i - 1);
     i = 0;
-    printf("value of j and i are  %d and %d\n", j, i);
     while (((j - i) > 0))
     {
         if (a[i] != a[j])
         {
-            printf("It's not a palindrome\n");
+            return false;
         }
         i++;
         j--;
     }
-    printf("It's a palindrome");
+    return true;
+}
+int main()
+{
+    int x = 121;
+    if (isPalindrome(x))
+    {
+        printf("true\n");
+    }
+    else
+    {
+        printf("false\n");
+    }
     return 0;
 }
