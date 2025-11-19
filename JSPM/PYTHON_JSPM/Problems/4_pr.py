@@ -1,2 +1,2 @@
-# Creating List
-apple = ['True', 45, "soham"]
+list = [1,2,3,4,5,6]
+print ("Our list: ",list)
