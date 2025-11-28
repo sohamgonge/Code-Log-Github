@@ -4,22 +4,23 @@
 int main()
 {
     int *ptr;
-    // printf("The size of int on my pc is %d\n", sizeof(int));
     int *ptr2;
-    // printf("How many integers you want to enter : ");
-    // scanf("%d", &n);
-    ptr = (int *)malloc(600* sizeof(int));
+    // Sizeof operator in C 8
+    // printf("The size of int on my pc is %d\n", sizeof(int));
+    // printf("The size of float on my pc is %d\n", sizeof(float));
+    // printf("The size of char on my pc is %d\n", sizeof (char));
+    ptr = (int *)malloc(6 * sizeof(int));
     for (int i = 0; i < 600; i++)
     {
-        
-        ptr2 = (int *)malloc(600000* sizeof(int));
-        printf("Enter the value of %d element : ", i + 1);
+        ptr2 = (int *)malloc(600000 * sizeof(int));
+        printf("Enter the value of %d element: \n", i);
         scanf("%d", &ptr[i]);
+        free(ptr2);
     }
     // for (int j = 0; j < n; j++)
     // {
     //     printf("The value of %d element is : %d\n", j + 1, ptr[j]);
     // }
-    
+
     return 0;
 }
