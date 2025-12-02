@@ -1,0 +1,84 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* Ensure the main container takes up the full viewport height */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    /* Set a maximum width for better readability */
+}
+
+/* Rest of your CSS styles */
+
+.form-group {
+    position: relative;
+    margin: 12px 0;
+}
+
+.form-group input {
+    padding: 8px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: #acacac solid 2px;
+    background-color: transparent;
+    /* color: #eee; */
+    transition: 0.15 all ease;
+}
+
+.form-group input:focus {
+    border-color: #eee;
+}
+
+.form-group input::placeholder {
+    color: transparent;
+}
+
+.form-group .form-label {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    font-size: 20px;
+    padding: 0 10px;
+    color: #acacac;
+    pointer-events: none;
+    transition: 0.15 all ease;
+}
+
+.form-group input:focus+.form-label,
+.form-group input:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    background-color: white;
+    font-size: 16px;
+    color: black;
+}
+
+.button {
+    text-align: center;
+}
+
+#button {
+
+    background-color: #f9532d;
+    border-radius: 20px;
+    color: white;
+    border: 2px solid #f9532d;
+    font-size: 1.4rem;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.signupbu a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: none;
+    color: rgb(133, 82, 133);
+    padding-top: 10px;
+}

@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #f9532d;
+    --primary-dark: #1F252E;
+}
+
+.artlink {
+    border: 2px solid rgba(224, 224, 224, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.1);
+    width: max(200px, 60vw);
+    margin: 45px auto;
+}
+
+.arttitle {
+    padding: 20px 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.descrip {
+    /* padding-top: 20px; */
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding: 0 15px;
+}
+
+#readmore {
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px 0;
+    color: #1F252E;
+}
+
+#readmore a {
+    /* text-decoration: none; */
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: #f9532d;
+}
+
+main a:hover {
+    background-color: #f9532d;
+    color: white;
+    text-decoration: none;
+}

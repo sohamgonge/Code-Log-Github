@@ -1,0 +1,92 @@
+.comtitle {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-decoration-color: #f9532d;
+    text-underline-offset: 6px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.comment-form textarea {
+    padding: 10px;
+    /* Adjust padding for spacing inside the textarea */
+    font-family: Arial, sans-serif;
+    /* Choose a suitable font */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    border: 2px solid #ccc;
+    /* Add a subtle border */
+    border-radius: 5px;
+    /* Add rounded corners */
+    background-color: #f8f8f8;
+    /* Set background color */
+    color: #333;
+    /* Set text color */
+    resize: vertical;
+    /* Allow vertical resizing */
+    min-height: 100px;
+    /* Set minimum height */
+    width: 60vw;
+    /* Make textarea full width */
+    margin-bottom: 15px;
+}
+
+.comment-form textarea:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #66afe9;
+    /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+    /* Add a subtle shadow on focus */
+}
+
+/* display coments */
+/* .comments-section{}
+/* Style for the comments display section can be applied here */
+
+.comment {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    /* Apply blur effect */
+    margin-bottom: 20px;
+    /* Add margin between comments */
+    margin-bottom: 15px;
+    padding: 15px;
+    /* Add padding inside the comment box */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Add a subtle border */
+    border-radius: 5px;
+    /* Add rounded corners */
+    width: 60vw;
+}
+
+
+.comment strong {
+    color: #333;
+    /* Set color for username */
+}
+
+.comment small {
+    color: #777;
+    /* Set color for timestamp */
+}
+
+
+
+button[type="submit"] {
+    background-color: #f9532d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    /* Adjust as needed to achieve desired capsule shape */
+    padding: 10px 20px;
+    /* Adjust padding for button size */
+    cursor: pointer;
+    font-size: 16px;
+    /* Adjust font size as needed */
+    font-weight: bold;
+    /* Optionally adjust font weight */
+    display: block;
+    margin-bottom: 15px;
+}

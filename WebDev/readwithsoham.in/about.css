@@ -1,0 +1,24 @@
+.about {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+}
+
+.paras {
+    margin: 0 3.5vw;
+    font-size: 1.5rem;
+}
+
+p {
+    padding: 15px 0;
+}
+
+footer {
+    position: relative;
+}
+
+.salutation {
+    text-align: right;
+    font-style: italic;
+}
