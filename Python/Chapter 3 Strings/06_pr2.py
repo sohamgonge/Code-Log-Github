@@ -1,5 +1,6 @@
-letter='''Dear <|Name|>,
-Your are selectedx
+letter='''
+Dear <|Name|>,
+Your are selected
 <|Date|>'''
 
-print("lrtter.replace<||>")
+print(letter.replace("<|Name|>", "Soham").replace("<|Date|>","24 Setptember 2050"))
