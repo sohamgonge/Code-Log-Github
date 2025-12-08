@@ -1,3 +1,4 @@
+d= {}# empty Dictionary
 marks = {
     "Harry": 100,
     "Shubham":56,
