@@ -1,5 +1,5 @@
 #include <stdio.h>
-int fib(int a);
+long long int fib(int a);
 
 int main()
 {
@@ -9,7 +9,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
 
-        printf("%d\t", fib(i));
+        printf("%lld\t", fib(i));
         if (i == (n - 1))
         {
             printf("\n");
@@ -18,7 +18,7 @@ int main()
 
     return 0;
 }
-int fib(int a)
+long long int fib(int a)
 {
     if (a == 1)
     {
