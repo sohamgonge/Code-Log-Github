@@ -13,7 +13,8 @@ int main()
         printf("Inside Big While\n");
         for (backslash = 0; backslash < 3;)
         {
-            printf("Inside Big For\n");
+            printf("Inside Big For %d\n",r);
+            r++;
             if (i == qlist[n])
             {
                 if (c == '\n')
