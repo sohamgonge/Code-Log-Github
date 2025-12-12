@@ -1,0 +1,79 @@
+1. What is your favourite color?
+a. Yellow               b. Red
+c. Pink                 d. Green
+
+2. Which season do you like the most?
+a. Summer               b. Winter
+c. Monsoon              d. Spring
+
+3. What is your preferred pet?
+a. Dog                  b. Cat
+c. Fish                 d. Bird
+
+4. Which subject do you enjoy the most?
+a. Math                 b. Science
+c. History              d. English
+
+5. What is your favourite hobby?
+a. Reading              b. Gaming
+c. Cycling              d. Drawing
+
+6. Which fruit do you like the most?
+a. Apple                b. Banana
+c. Mango                d. Grapes
+
+7. How do you spend your free time?
+a. Sleeping             b. Watching TV
+c. Studying             d. Chatting
+
+8. What kind of movies do you enjoy?
+a. Action               b. Comedy
+c. Horror               d. Romance
+
+9. What is your favourite sport?
+a. Cricket              b. Football
+c. Badminton            d. Basketball
+
+10. Which drink do you prefer?
+a. Tea                  b. Coffee
+c. Juice                d. Milkshake
+
+11. How do you like to travel?
+a. Car                  b. Bike
+c. Train                d. Bus
+
+12. What is your favourite time of day?
+a. Morning              b. Afternoon
+c. Evening              d. Night
+
+13. What type of music do you prefer?
+a. Pop                  b. Classical
+c. Rock                 d. Hip-Hop
+
+14. Which device do you use the most?
+a. Phone                b. Laptop
+c. Tablet               d. Desktop
+
+15. What is your favourite ice-cream flavor?
+a. Vanilla              b. Chocolate
+c. Strawberry           d. Mango
+
+16. What kind of books do you like?
+a. Fiction              b. Non-fiction
+c. Comics               d. Biographies
+
+17. Which fast food do you prefer?
+a. Pizza                b. Burger
+c. Sandwich             d. Fries
+
+18. What is your favourite social media app?
+a. Instagram            b. YouTube
+c. Snapchat             d. Reddit
+
+19. How do you prefer to study?
+a. Alone                b. With Friends
+c. Online               d. Classroom
+
+20. What is your dream vacation location?
+a. Mountains            b. Beach
+c. Forest               d. City Tour

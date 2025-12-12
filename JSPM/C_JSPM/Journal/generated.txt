@@ -1,0 +1,4 @@
+Name : Hames Bond
+Roll no : 8
+Marks : 50.000000
+Thanks for using fprintf
