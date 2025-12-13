@@ -1,79 +1,399 @@
-1. What is your favourite color?
-a. Yellow               b. Red
-c. Pink                 d. Green
+001. Which metal was historically known as “quicksilver”?
+a. Silver               b. Mercury
+c. Sodium               d. Platinum
 
-2. Which season do you like the most?
-a. Summer               b. Winter
-c. Monsoon              d. Spring
+002. What food never spoils naturally?
+a. Salt                 b. Rice
+c. Honey                d. Vinegar
 
-3. What is your preferred pet?
-a. Dog                  b. Cat
-c. Fish                 d. Bird
+003. Smallest country by area:
+a. Monaco               b. Vatican City
+c. Malta                d. Liechtenstein
 
-4. Which subject do you enjoy the most?
-a. Math                 b. Science
-c. History              d. English
+004. Planet with retrograde rotation:
+a. Mars                 b. Jupiter
+c. Venus                d. Saturn
 
-5. What is your favourite hobby?
-a. Reading              b. Gaming
-c. Cycling              d. Drawing
+005. Brain part controlling balance:
+a. Cerebellum           b. Cerebrum
+c. Medulla              d. Hypothalamus
 
-6. Which fruit do you like the most?
-a. Apple                b. Banana
-c. Mango                d. Grapes
+006. Chemical formula of salt:
+a. KCl                  b. NaCl
+c. CaCl2                d. MgCl2
 
-7. How do you spend your free time?
-a. Sleeping             b. Watching TV
-c. Studying             d. Chatting
+007. Longest river (traditionally):
+a. Amazon               b. Mississippi
+c. Nile                 d. Yangtze
 
-8. What kind of movies do you enjoy?
-a. Action               b. Comedy
-c. Horror               d. Romance
+008. Highest average elevation continent:
+a. Asia                 b. Europe
+c. Antarctica           d. South America
 
-9. What is your favourite sport?
-a. Cricket              b. Football
-c. Badminton            d. Basketball
+009. Main gas on Jupiter:
+a. Helium               b. Hydrogen
+c. Methane              d. Oxygen
 
-10. Which drink do you prefer?
-a. Tea                  b. Coffee
-c. Juice                d. Milkshake
+010. Ascorbic acid is:
+a. Vitamin D            b. Vitamin A
+c. Vitamin B12          d. Vitamin C
 
-11. How do you like to travel?
-a. Car                  b. Bike
-c. Train                d. Bus
+011. Most time zones:
+a. France               b. Russia
+c. USA                  d. China
 
-12. What is your favourite time of day?
-a. Morning              b. Afternoon
-c. Evening              d. Night
+012. Gallbladder stores:
+a. Saliva               b. Acid
+c. Bile                 d. Insulin
 
-13. What type of music do you prefer?
-a. Pop                  b. Classical
-c. Rock                 d. Hip-Hop
+013. Lava forms which rock?
+a. Sedimentary          b. Igneous
+c. Metamorphic          d. Crystalline
 
-14. Which device do you use the most?
-a. Phone                b. Laptop
-c. Tablet               d. Desktop
+014. Measures air pressure:
+a. Hygrometer           b. Altimeter
+c. Barometer            d. Anemometer
 
-15. What is your favourite ice-cream flavor?
-a. Vanilla              b. Chocolate
-c. Strawberry           d. Mango
+015. Main glass ingredient:
+a. Sand                 b. Clay
+c. Quartz               d. Limestone
 
-16. What kind of books do you like?
-a. Fiction              b. Non-fiction
-c. Comics               d. Biographies
+016. Laws of motion by:
+a. Galileo              b. Newton
+c. Einstein             d. Kepler
 
-17. Which fast food do you prefer?
-a. Pizza                b. Burger
-c. Sandwich             d. Fries
+017. Infection-fighting cells:
+a. Red cells            b. Plasma
+c. White cells          d. Platelets
 
-18. What is your favourite social media app?
-a. Instagram            b. YouTube
-c. Snapchat             d. Reddit
+018. H₂SO₄ is:
+a. Nitric acid          b. Acetic acid
+c. Sulfuric acid        d. Hydrochloric acid
 
-19. How do you prefer to study?
-a. Alone                b. With Friends
-c. Online               d. Classroom
+019. Glycogen stored in:
+a. Liver                b. Kidney
+c. Brain                d. Heart
 
-20. What is your dream vacation location?
-a. Mountains            b. Beach
-c. Forest               d. City Tour
+020. Thickest Earth layer:
+a. Crust                b. Mantle
+c. Outer core           d. Inner core
+
+021. Opposes motion:
+a. Gravity              b. Friction
+c. Pressure             d. Drag
+
+022. Balloon gas:
+a. Hydrogen             b. Nitrogen
+c. Oxygen               d. Helium
+
+023. Driest continent:
+a. Africa               b. Australia
+c. Antarctica           d. Asia
+
+024. WWW inventor:
+a. Bill Gates           b. Tim Berners-Lee
+c. Steve Jobs           d. Dennis Ritchie
+
+025. Pumps blood:
+a. Lungs                b. Heart
+c. Kidney               d. Pancreas
+
+026. SI unit of force:
+a. Newton               b. Joule
+c. Pascal               d. Watt
+
+027. Largest brain:
+a. Dolphin              b. Elephant
+c. Human                d. Blue whale
+
+028. Neither prime nor composite:
+a. 1                    b. 0
+c. 2                    d. 3
+
+029. Fastest rotating planet:
+a. Earth                b. Jupiter
+c. Mars                 d. Neptune
+
+030. Rarest natural element:
+a. Francium             b. Radon
+c. Astatine             d. Iridium
+
+031. Greenhouse gas:
+a. Oxygen               b. Carbon dioxide
+c. Argon                d. Helium
+
+032. Largest desert:
+a. Sahara               b. Gobi
+c. Antarctic Desert     d. Arabian
+
+033. Energy in stretched spring:
+a. Thermal              b. Kinetic
+c. Chemical             d. Elastic potential
+
+034. Midnight Sun country:
+a. Finland              b. Iceland
+c. Norway               d. Sweden
+
+035. Liquid → vapor:
+a. Condensation         b. Evaporation
+c. Sublimation          d. Deposition
+
+036. DNA function:
+a. Energy               b. Protection
+c. Genetic storage      d. Muscle building
+
+037. Microwave ovens use:
+a. Radio waves          b. Microwaves
+c. Infrared             d. Ultraviolet
+
+038. Discovered penicillin:
+a. Pasteur              b. Fleming
+c. Curie                d. Mendel
+
+039. Needed for rust:
+a. Nitrogen             b. Oxygen
+c. Carbon               d. Hydrogen
+
+040. Lower boiling point when:
+a. Pressure increases   b. Altitude increases
+c. Salt added           d. Temperature drops
+
+041. Largest population:
+a. China                b. USA
+c. Indonesia            d. India
+
+042. Japan currency:
+a. Yen                  b. Won
+c. Peso                 d. Dollar
+
+043. Iron ore:
+a. Hematite             b. Quartz
+c. Dolomite             d. Limestone
+
+044. Earthquake study:
+a. Meteorology          b. Seismology
+c. Ecology              d. Geology
+
+045. Genetic material in:
+a. Nucleus              b. Ribosome
+c. Mitochondria         d. Chloroplast
+
+046. Day longer than year:
+a. Venus                b. Mercury
+c. Uranus               d. Neptune
+
+047. Sound fastest in:
+a. Air                  b. Water
+c. Steel                d. Vacuum
+
+048. Deepest ocean:
+a. Atlantic             b. Pacific
+c. Arctic               d. Indian
+
+049. pH of pure water:
+a. 0                    b. 14
+c. 7                    d. 10
+
+050. Mona Lisa painter:
+a. Rembrandt            b. Picasso
+c. Michelangelo         d. Leonardo da Vinci
+
+051. Largest mammal on Earth:
+a. Elephant             b. Blue whale
+c. Whale shark          d. Giraffe
+
+052. Organ producing insulin:
+a. Liver                b. Kidney
+c. Pancreas             d. Stomach
+
+053. Study of weather:
+a. Astronomy            b. Geography
+c. Physiology           d. Meteorology
+
+054. Gas essential for burning:
+a. Oxygen               b. Carbon dioxide
+c. Nitrogen             d. Helium
+
+055. Instrument measuring humidity:
+a. Barometer            b. Thermometer
+c. Hygrometer           d. Pyrometer
+
+056. Water cycle begins with:
+a. Precipitation        b. Condensation
+c. Evaporation          d. Runoff
+
+057. Metal used in electric wires:
+a. Gold                 b. Aluminum
+c. Copper               d. Silver
+
+058. First country to land humans on Moon:
+a. Russia               b. China
+c. USA                  d. India
+
+059. Largest bird:
+a. Eagle                b. Ostrich
+c. Albatross            d. Emu
+
+060. Great Red Spot planet:
+a. Saturn               b. Uranus
+c. Neptune              d. Jupiter
+
+061. Baking soda chemical name:
+a. Sodium carbonate     b. Sodium bicarbonate
+c. Sodium chloride      d. Potassium bicarbonate
+
+062. Regulates body temperature:
+a. Heart                b. Kidney
+c. Skin                 d. Lung
+
+063. Universal donor blood group:
+a. O+                   b. AB+
+c. AB−                  d. O−
+
+064. Refrigeration gas:
+a. Methane              b. Helium
+c. Hydrogen             d. Ammonia
+
+065. Country that invented paper money:
+a. China                b. India
+c. Egypt                d. Greece
+
+066. Speed of light:
+a. 3,000 km/s           b. 30,000 km/s
+c. 3,00,000 km/s        d. 3,00,000 m/s
+
+067. No permanent human population:
+a. Europe               b. Africa
+c. Australia            d. Antarctica
+
+068. Organ detoxifying chemicals:
+a. Pancreas             b. Spleen
+c. Kidney               d. Liver
+
+069. Smallest bone:
+a. Stapes               b. Femur
+c. Radius               d. Ulna
+
+070. Gas in soft drinks:
+a. Nitrogen             b. Oxygen
+c. Carbon dioxide       d. Argon
+
+071. “Roof of the World”:
+a. Nepal                b. Bhutan
+c. Tibet                d. Mongolia
+
+072. Metal used for mirrors:
+a. Aluminum             b. Copper
+c. Gold                 d. Iron
+
+073. Closest star to Earth:
+a. Proxima Centauri     b. Sirius
+c. Alpha Centauri       d. The Sun
+
+074. Freezing point of water:
+a. −10°C                b. 5°C
+c. 0°C                  d. −5°C
+
+075. Theory of evolution:
+a. Mendel               b. Lamarck
+c. Watson               d. Darwin
+
+076. Temporarily stores food:
+a. Liver                b. Pancreas
+c. Intestine            d. Stomach
+
+077. Earth’s natural satellite:
+a. Titan                b. Moon
+c. Europa               d. Mars
+
+078. Best conductor of electricity:
+a. Copper               b. Gold
+c. Aluminum             d. Silver
+
+079. Formula of water:
+a. HO₂                  b. OH₂
+c. H₂O                  d. H₂O₂
+
+080. Fastest land animal:
+a. Horse                b. Cheetah
+c. Leopard              d. Tiger
+
+081. Hardest natural substance:
+a. Quartz               b. Iron
+c. Diamond              d. Gold
+
+082. SI unit of power:
+a. Joule                b. Watt
+c. Newton               d. Pascal
+
+083. Blood carries oxygen using:
+a. Plasma               b. Platelets
+c. Hemoglobin           d. WBC
+
+084. Largest ocean:
+a. Atlantic             b. Indian
+c. Arctic               d. Pacific
+
+085. Gas plants absorb:
+a. Oxygen               b. Nitrogen
+c. Carbon dioxide       d. Hydrogen
+
+086. Vitamin from sunlight:
+a. Vitamin A            b. Vitamin B
+c. Vitamin C            d. Vitamin D
+
+087. Device measuring earthquakes:
+a. Barometer            b. Seismograph
+c. Anemometer           d. Thermometer
+
+088. Unit of electric current:
+a. Ohm                  b. Volt
+c. Ampere               d. Watt
+
+089. Boiling point of water:
+a. 90°C                 b. 80°C
+c. 100°C                d. 120°C
+
+090. Largest internal organ:
+a. Liver                b. Heart
+c. Lung                 d. Kidney
+
+091. Scientist of relativity:
+a. Newton               b. Einstein
+c. Galileo              d. Bohr
+
+092. Metal liquid at room temperature:
+a. Gallium              b. Sodium
+c. Mercury              d. Lead
+
+093. Source of solar energy:
+a. Moon                 b. Sun
+c. Stars                d. Fire
+
+094. Acid in stomach:
+a. Sulfuric             b. Nitric
+c. Acetic               d. Hydrochloric
+
+095. Largest planet:
+a. Saturn               b. Earth
+c. Jupiter              d. Uranus
+
+096. Instrument measuring wind speed:
+a. Barometer            b. Anemometer
+c. Hygrometer           d. Altimeter
+
+097. Human body pH:
+a. 5.5                  b. 7.4
+c. 6.8                  d. 8.5
+
+098. Metal used in coins:
+a. Zinc                 b. Nickel
+c. Copper               d. Mercury
+
+099. Primary source of energy on Earth:
+a. Wind                 b. Coal
+c. Sun                  d. Water
+
+100. Smallest planet:
+a. Mercury              b. Mars
+c. Venus                d. Earth

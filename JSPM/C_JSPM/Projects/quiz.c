@@ -7,6 +7,8 @@ int main()
     int counta = 0, ansa = 0, answered = 1, backslash = 1, totalback = 0, start = 1, i = 0, n = 0, r = 1;
     char c = fgetc(qptr);
     int qlist[] = {1, 5, 9, 13, 17};
+    c = fgetc(qptr);
+
     while (answered <= 5)
     {
         printf("%d\n",r);
