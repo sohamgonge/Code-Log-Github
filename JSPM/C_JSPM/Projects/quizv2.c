@@ -38,8 +38,8 @@ int main()
     int start = qlist[0] * 4;
     // printf("The value of start : %d \n", start);
     printf("\n+-------------------------------------------------+\n");
-    printf("|                   QUIZ STARTS                   |\n");
-    printf("+-------------------------------------------------+\n\n");
+    printf(  "|                   QUIZ STARTS                   |\n");
+    printf(  "+-------------------------------------------------+\n\n");
     while (answered < 10)
     {
         // printf("answer : %d\n", answered);
@@ -126,8 +126,8 @@ int main()
         }
     }
     printf("\n==================================================\n");
-    printf("                   QUIZ FINISHED                 \n");
-    printf("==================================================\n");
+    printf(  "                   QUIZ FINISHED                  \n");
+    printf(  "==================================================\n");
     printf("Your Score : %d / 10\n\n", score);
     return 0;
 }
