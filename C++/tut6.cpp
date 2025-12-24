@@ -41,5 +41,7 @@ int main(){
     cout<<endl;
     cout<<"Following are the logical operators in C++"<<endl;
     cout<<"The value of this a==b && a<b is : "<<((a==b)&&(a<b))<<endl;
+    cout<<"The value of this a==b ||  a<b is : "<<((a==b)||(a<b))<<endl;
+    cout<<"The value of this (a==b) is : "<<(!(a==b))<<endl;
     return 0;
 }
