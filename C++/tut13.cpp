@@ -25,7 +25,18 @@ int main()
     for (int i = 0; i < 4; i++)
     {
         cout << "The value of marks " << i << " is " << mathMarks[i] << endl;
+
     }
+
+
+    // Pointers and arrays
+    int* p = marks;
+    cout<<*(p++)<<endl;
+    cout<<*(++p)<<endl;
+    // cout<<"The value of marks[0] is : "<<*p<<endl;
+    // cout<<"The value of marks[0] is : "<<*(p+1)<<endl;
+    // cout<<"The value of marks[0] is : "<<*(p+2)<<endl;
+    // cout<<"The value of marks[0] is : "<<*(p+3)<<endl;
 
     return 0;
 }
