@@ -71,9 +71,9 @@ def mainGame():
     pipeVelX=-4
 
     playerVelY=-9
-    playerMaxVelY = 10
+    playerMaxVelY = 9
     playerMinVelY=-8
-    playerAccY = 1
+    playerAccY = 0.8
 
     playerFlapAccv = -8 # Velocity while flapping
     playerFlapped = False # It is true only when the bird is flapping 
