@@ -6,7 +6,7 @@ import os
 
 # Global Variables for the game
 
-FPS = 60
+FPS = 30
 SCREENWIDTH = 289
 SCREENHEIGHT= 511
 # Creaters a display surface (Initialising Screen for display)
