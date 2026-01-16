@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
 
     // Error Message
     std::cerr << "Error message : Something is wrong" << std::endl;
-    std::clog << "Log message : Something Happened " << std::endl;
+    std::clog << "Log message : Something Happene d " << std::endl;
 
     */
 
