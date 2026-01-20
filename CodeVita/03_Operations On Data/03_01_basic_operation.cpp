@@ -1,11 +1,31 @@
-#include<iostream>
+#include <iostream>
 
-int main(){
-    int number1, number2;
-    int sum { number1 + number2 };
-    int other_sum = number1 + number2 + number1;
+int main()
+{
+    //  Addition
+    int number1{2};
+    int number2{7};
 
-    std::cout << "The sum is : " << sum << std::endl;
-    std::cout << "Other sum is : " << other_sum << std::endl;
+    int result = number1 + number2;
+    std::cout << "result : " << result << std::endl;
+
+    // Subtraction
+    result = number1 - number2;
+    // result = number2 - number1;
+    std::cout << "result : " << result << std::endl;
+
+    // Multiplication
+    result = number1 * number2;
+    std::cout << "result : " << result << std::endl;
+
+    // Division
+    //  result = number2 / number1;
+    result = number1 / number2;
+    std::cout << "result : " << result << std::endl;
+
+    // Modulus
+    result = number2 % number1;
+    std::cout << "result : " << result << std::endl;
+
     return 0;
 }
