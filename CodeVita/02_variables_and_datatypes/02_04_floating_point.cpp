@@ -45,5 +45,29 @@ int main()
     std::cout << "number8 is : " << number8 << std::endl;
     std::cout << "numberg is : " << number9 << std::endl;
 
+    std::cout << std::endl;
+
+    //Infinity and Nan
+    std::cout << std::endl;
+    std::cout << "Infinity and NaN" << std::endl;
+
+    // double number10{ 5.6 };
+    double number10{ -5.6 };
+    double number11{};//Initialized to 0
+    double number12{};//Initialized to 0
+
+    // Infinity
+    double result { number10 / number11 };
+
+    std::cout << number10 << "/" << number11 << " yields " << result << std::endl;
+    std::cout << result << "+" << number10 << " yields " << result + number10 << std::endl;
+    
+    //NaN
+    result = number11 / number12;
+    
+    std::cout << number11 << "/" << number12 << " yields " << result << std::endl;
+
+
+
     return 0;
 }
