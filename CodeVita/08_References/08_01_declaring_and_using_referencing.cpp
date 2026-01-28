@@ -3,36 +3,63 @@
 int main() {
     // Declaring and using references
 
-    int int_data{45};
-    double double_data{33.65};
+    int int_data{33};
+    double double_data{55};
 
-    // Assign through initialization (reference must be initialized)
-    int& reference_to_int_data_1{int_data};
+    // References
+    int& ref_int_data{int_data};
+    double& ref_double_data{double_data};
 
-    // Another reference to the same int
-    int& reference_to_int_data_2 = int_data;
 
-    // Reference to the double
-    double& reference_to_double_data_1{double_data};
+    // Print stuff out
+    std::cout << "int_data : " << int_data << std::endl;
+    std::cout << "&int_data : " << &int_data << std::endl;
+    std::cout << "double_data : " << double_data << std::endl;
+    std::cout << "&double_data : " << &double_data << std::endl;
 
-    // You have to declare and initialize in one statement
-    // int& some_reference; // Error
+    std::cout << "====================================" << std::endl; 
+
+    std::cout << "ref_int_data : " << ref_int_data << std::endl;
+    std::cout << "&ref_int_data : " << &ref_int_data << std::endl;
+    std::cout << "ref_double_data : " << ref_double_data << std::endl;
+    std::cout << "&ref_double_data : " << &ref_double_data << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    int_data = 111;
+    double_data = 67.2;
 
     std::cout << "int_data : " << int_data << std::endl;
-    std::cout << "double_data : " << double_data << std::endl;
-    std::cout << "reference_to_int_data_1 : " << reference_to_int_data_1 << std::endl;
-    std::cout << "reference_to_int_data_2 : " << reference_to_int_data_2 << std::endl;
-    std::cout << "reference_to_double_data_1 : " << reference_to_double_data_1 << std::endl;
-
     std::cout << "&int_data : " << &int_data << std::endl;
+    std::cout << "double_data : " << double_data << std::endl;
     std::cout << "&double_data : " << &double_data << std::endl;
-    std::cout << "&reference_to_int_data_1 : " << &reference_to_int_data_1 << std::endl;
-    std::cout << "&reference_to_int_data_2 : " << &reference_to_int_data_2 << std::endl;
-    std::cout << "&reference_to_double_data_1 : " << &reference_to_double_data_1 << std::endl;
 
-    std::cout << "sizeof(int) : " << sizeof(int) << std::endl;
-    std::cout << "sizeof(int&) : " << sizeof(int&) << std::endl;
-    std::cout << "sizeof(reference_to_int_data_1) : " << sizeof(reference_to_int_data_1) << std::endl;
+    std::cout << "====================================" << std::endl; 
 
+    std::cout << "ref_int_data : " << ref_int_data << std::endl;
+    std::cout << "&ref_int_data : " << &ref_int_data << std::endl;
+    std::cout << "ref_double_data : " << ref_double_data << std::endl;
+    std::cout << "&ref_double_data : " << &ref_double_data << std::endl;
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    ref_int_data = 1012;
+    ref_double_data = 1000.45;
+
+    std::cout << "int_data : " << int_data << std::endl;
+    std::cout << "&int_data : " << &int_data << std::endl;
+    std::cout << "double_data : " << double_data << std::endl;
+    std::cout << "&double_data : " << &double_data << std::endl;
+
+    std::cout << "====================================" << std::endl; 
+
+    std::cout << "ref_int_data : " << ref_int_data << std::endl;
+    std::cout << "&ref_int_data : " << &ref_int_data << std::endl;
+    std::cout << "ref_double_data : " << ref_double_data << std::endl;
+    std::cout << "&ref_double_data : " << &ref_double_data << std::endl;
+
+    
     return 0;
 }
