@@ -12,6 +12,19 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "C/C++: clang++ build active file"
+        },
+        {
+            "name": "C/C++: GCC 15 build and debug (C++23)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/app.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "Build and Run C++ (GCC 15, C++23)"
         }
     ],
     "version": "2.0.0"
