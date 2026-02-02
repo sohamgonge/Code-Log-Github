@@ -1,0 +1,19 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     app.out
+relocations:
+  - { offset: 0x16C8B, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x6EE19, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x16CA2, size: 0x8, addend: 0x0, symName: __ZL2PI, symObjAddr: 0x1C0, symBinAddr: 0x100000B10, symSize: 0x0 }
+  - { offset: 0x1702B, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_13_06.cpp, symObjAddr: 0x24C, symBinAddr: 0x10000093C, symSize: 0x14 }
+  - { offset: 0x17043, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x210, symBinAddr: 0x100000900, symSize: 0x3C }
+  - { offset: 0x17062, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100000740, symSize: 0x1C0 }
+  - { offset: 0x170D0, size: 0x8, addend: 0x0, symName: __ZN8CylinderC2Edd, symObjAddr: 0x0, symBinAddr: 0x100000950, symSize: 0x4C }
+  - { offset: 0x170F3, size: 0x8, addend: 0x0, symName: __ZL2PI, symObjAddr: 0x158, symBinAddr: 0x100000B18, symSize: 0x0 }
+  - { offset: 0x1711F, size: 0x8, addend: 0x0, symName: __ZN8Cylinder10set_heightEd, symObjAddr: 0x134, symBinAddr: 0x100000A84, symSize: 0x24 }
+  - { offset: 0x1715C, size: 0x8, addend: 0x0, symName: __ZN8Cylinder15set_base_radiusEd, symObjAddr: 0x110, symBinAddr: 0x100000A60, symSize: 0x24 }
+  - { offset: 0x17198, size: 0x8, addend: 0x0, symName: __ZN8Cylinder10get_heightEv, symObjAddr: 0xF4, symBinAddr: 0x100000A44, symSize: 0x1C }
+  - { offset: 0x171C5, size: 0x8, addend: 0x0, symName: __ZN8Cylinder15get_base_radiusEv, symObjAddr: 0xD8, symBinAddr: 0x100000A28, symSize: 0x1C }
+  - { offset: 0x171F2, size: 0x8, addend: 0x0, symName: __ZN8Cylinder6volumeEv, symObjAddr: 0x98, symBinAddr: 0x1000009E8, symSize: 0x40 }
+  - { offset: 0x17253, size: 0x8, addend: 0x0, symName: __ZN8CylinderC1Edd, symObjAddr: 0x4C, symBinAddr: 0x10000099C, symSize: 0x4C }
+  - { offset: 0x1728F, size: 0x8, addend: 0x0, symName: __ZN8CylinderC2Edd, symObjAddr: 0x0, symBinAddr: 0x100000950, symSize: 0x4C }
+...
