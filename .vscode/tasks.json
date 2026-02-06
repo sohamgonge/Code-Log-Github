@@ -2,17 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run C",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "-c",
-                "gcc \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}\" && \"${fileDirname}/${fileBasenameNoExtension}\""
-            ],
-            "group": "build",
-            "problemMatcher": []
-        },
-        {
             "label": "Build and Run C++ (current folder)",
             "type": "shell",
             "command": "bash",
@@ -24,27 +13,22 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "detail": "Builds all C++ files in the active subfolder into app.out"
-        },
+            "problemMatcher": ["$gcc"]
+        }
+        ,
         {
             "label": "Build and Run C++ (GCC 15, C++23)",
             "type": "shell",
             "command": "bash",
             "args": [
                 "-c",
-                "cd \"${fileDirname}\" && /opt/homebrew/bin/g++-15 *.cpp -std=c++23 -g -o app.out"
+                "cd \"${fileDirname}\" && /opt/homebrew/bin/g++-15 *.cpp -std=c++23 -g -Wall -Wextra -o app_gcc.out"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": false
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "detail": "Builds all C++ files in the active subfolder using GNU GCC 15 with C++23"
-        },
+            "problemMatcher": ["$gcc"]
+        }
     ]
 }

@@ -4,20 +4,20 @@
             "name": "C/C++: clang++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${fileDirname}/app.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang++ build active file"
+            "preLaunchTask": "Build and Run C++ (current folder)"
         },
         {
             "name": "C/C++: GCC 15 build and debug (C++23)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/app.out",
+            "program": "${fileDirname}/app_gcc.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
