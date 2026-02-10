@@ -8,21 +8,10 @@ int main()
 {
     Circle circle1(7.2, "circle1");
     Oval oval1(13.3, 1.2, "Oval1");
-    Circle circle2(11.2, "circle2");
-    Oval oval2(31.2, 15.2, "oval2");
-    Circle circle3(12.2, "circle3");
-    Oval oval3(53.3, 9.2, "Oval3");
+    
+    Shape * shape_ptr = new Circle (10, "Circle");
+    // shape_ptr->draw(45, "Red");  // The compiler doesn't know this function exists if not declared in shape class(base class) and rather only declared in the oval class
 
-    // Raw pointers
-
-    Shape *shapes3[]{&circle1, &oval1, &circle2, &oval2, &circle3, &oval3};
-
-    for (Shape *shape_ptr : shapes3)
-    {
-        std::cout << "Inside array, sizeof(*shape_ptr) : " << sizeof(*shape_ptr) << std::endl;
-        shape_ptr->draw();
-        std::cout << std::endl;
-    }
 
     return 0;
 }
