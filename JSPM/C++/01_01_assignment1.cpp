@@ -2,6 +2,7 @@
 
 int main()
 {
+    std::cout << "Hello, World!" << std::endl;
     int n1{}, n2{}, ans{};
     char op{};
     std::cout << "Welcome to Calculator" << std::endl;
