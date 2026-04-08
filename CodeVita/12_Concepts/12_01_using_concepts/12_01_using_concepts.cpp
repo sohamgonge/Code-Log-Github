@@ -10,12 +10,12 @@
 // }
 
 // Syntax 1 
-// template <typename T>
-//     requires std::integral<T>
-// T add(T a, T b)
-// {
-//     return a + b;
-// }
+template <typename T>
+    requires std::integral<T>
+T add(T a, T b)
+{
+    return a + b;
+}
 
 // Syntax 2
 // template <std::integral T>
@@ -30,10 +30,10 @@
 // }
 
 // Syntax 4
-template <typename T>
-T add(T a, T b) requires std::integral<T>{
-    return a + b;
-}
+// template <typename T>
+// T add(T a, T b) requires std::integral<T>{
+//     return a + b;
+// }
 
 int main()
 {

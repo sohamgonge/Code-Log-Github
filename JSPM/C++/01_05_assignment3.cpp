@@ -41,7 +41,7 @@ int main()
 {
     student sobj1;
     sobj1.display();
-    student sobj2(45, "Aayush", 7.96f);
+    student sobj2(63, "Soham", 8.74f);
     sobj2.display();
     student sobj3(sobj2);
     sobj3.display();
