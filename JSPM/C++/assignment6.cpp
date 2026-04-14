@@ -79,7 +79,7 @@ public:
 
 int main()
 {
-    Transaction t("Soham", 500);
+    Transaction t("User", 500);
     t.showBalance();
     t.deposit(500);
     t.withdraw(300);

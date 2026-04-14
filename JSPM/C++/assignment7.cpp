@@ -110,7 +110,7 @@ public:
     void setAccountDetails()
     {
         setPersonDetails();
-        cout << "Enter your Account Number : ";
+        cout << "Enter your Ac/No. : ";
         cin >> accountNumber;
     }
     void displayAccountDetails()
@@ -126,7 +126,7 @@ int main()
     Account ap1;
     ap1.displayAccountDetails();
     cout << endl;
-    Account ap2("Soham", 18, 500, 101206);
+    Account ap2("User", 18, 500, 101206);
     ap2.displayAccountDetails();
     cout << endl;
     Account ap3;

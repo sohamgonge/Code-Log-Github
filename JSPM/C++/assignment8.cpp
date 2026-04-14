@@ -6,6 +6,7 @@ class BankAccount
 private:
     int AccountNumber;
     string holderName;
+protected:
     double balance;
 
 public:
@@ -66,46 +67,64 @@ public:
 class SavingsAccount : public BankAccount
 {
 private:
-    double intrestRate;
+    double interestRate;
     float time;
-    double intrest;
+    double interest;
 
 public:
     SavingsAccount()
     {
-        intrestRate = 0.03;
+        interestRate = 0.03;
         time = 0;
-        intrest = intrestRate * time;
+        interest = 0;
     }
     SavingsAccount(int pacno, string pname, double pbalance, double prate) : BankAccount(pacno, pname, pbalance)
     {
-        intrestRate = prate;
+        interestRate = prate;
     }
     ~SavingsAccount() {}
     void calculateInterest()
     {
         cout << "Enter time period : ";
         cin >> time;
-        intrest = intrestRate * time;
-        cout << "Interest earned : " << intrest << endl;
+        interest = balance * interestRate * time;
+        cout << "Interest earned : " << interest << endl;
     }
 };
 class PremiumAccount : public SavingsAccount
 {
-    private:
-        float specialInterestRate;
+private:
+    float specialInterestRate;
 
-    public : 
-        PremiumAccount(){
-            specialInterestRate = 0.04;
-        }
-        PremiumAccount(int pacno, string pname, double pbalance, double prate, float psprate) : SavingsAccount(pacno, pname, pbalance, prate){
+public:
+    PremiumAccount()
+    {
+        specialInterestRate = 0.04;
+    }
+    PremiumAccount(int pacno, string pname, double pbalance, double prate, float psprate)
+        : SavingsAccount(pacno, pname, pbalance, prate)
+    {
+        specialInterestRate = psprate;
+    }
 
-        }
+    void specialBenefits()
+    {
+        cout << "Premium Benefits:" << endl;
+        cout << "- Higher interest rate: " << specialInterestRate << endl;
+        cout << "- Priority customer support" << endl;
+        cout << "- Exclusive offers" << endl;
+    }
 };
 
 int main()
 {
+    PremiumAccount acc(1001, "Soham", 5000, 0.03, 0.04);
+
+    acc.deposit(2000);
+    acc.withdraw(1500);
+    acc.calculateInterest();
+    acc.specialBenefits();
+    acc.displayBalance();
 
     return 0;
 }

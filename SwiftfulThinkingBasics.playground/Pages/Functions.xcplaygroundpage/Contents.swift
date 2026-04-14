@@ -50,3 +50,27 @@ func checkUserStatus(didCompleteOnboarding: Bool, profileIsCreated: Bool) -> Boo
         return false
     }
 }
+
+func doSomethingElse(someValue : Bool){ // don't need to mention void if it doesn't return something the compiler understnads it
+    
+}
+
+// ------------------------------
+
+func doSomething() -> String{
+    var title: String = "Avengers"
+    
+//    "If title is equal to Avengers"
+    if title == "Avengers"{
+        return "Marvel"
+    }
+    else{
+        return "Not Marvel"}
+}
+
+func doSomethingElse(){
+    
+    
+}
+
+

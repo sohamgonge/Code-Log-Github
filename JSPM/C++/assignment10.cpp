@@ -1,37 +1,41 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Comp{
-    private : 
-        int real, imag;
-    public: 
-        Comp(int preal = 0, int pcomp = 0){
-            real = preal;
-            imag = pcomp;
-        }
+class Comp
+{
+private:
+    int num;
 
-        Comp operator + (){
-            return Comp(real, imag);
-        }
-        Comp operator -(){
-            return Comp(-real,- imag);
-        }
-         void display(){
-            cout <<"("<< real <<")"<< " + " <<"("<< imag <<")"<< endl;
-         }
+public:
+    Comp()
+    {
+        num = 8;
+    }
+
+    void operator++()
+    {
+        num += 2;
+    }
+    void operator--()
+    {
+        num -= 2;
+    }
+    void print()
+    {
+        cout << num << endl;
+    }
 };
 
 int main()
 {
-    Comp c0;
-    cout << "Before :";
-    c0.display();
-    Comp c1(5, 3);
-    Comp c2 = +c1;
-    cout << "After + :";
-    c2.display();
-    Comp c3 = -c1;
-    cout << "After - :";
-    c3.display();
+    Comp cobb;
+    cout << "Initial : ";
+    cobb.print();
+    ++cobb;
+    cout << "After pre-increment : ";
+    cobb.print();
+    --cobb;
+    cout << "After pre-decrement : ";
+    cobb.print();
     return 0;
 }
