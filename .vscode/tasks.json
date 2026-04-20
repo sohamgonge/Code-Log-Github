@@ -13,9 +13,10 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": ["$gcc"]
-        }
-        ,
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
         {
             "label": "Build and Run C++ (GCC 15, C++23)",
             "type": "shell",
@@ -28,7 +29,9 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "problemMatcher": ["$gcc"]
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
