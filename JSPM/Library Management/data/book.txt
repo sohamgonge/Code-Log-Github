@@ -1,0 +1,3 @@
+id | author | genre | tcopies | acopies
+id | author | genre | tcopies | acopies
+
