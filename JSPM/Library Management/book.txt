@@ -1,0 +1,2 @@
+title|author|genre|isbn|totalCopies|availableCopies
+The One Thing|Gary Kepler & Jay Papasan|Non-Fictional & Self-Help|12345|15|15

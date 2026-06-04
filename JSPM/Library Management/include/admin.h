@@ -1,27 +1,25 @@
 #ifndef ADMIN_H
-#define ADMIN_h
+#define ADMIN_H
 
 #include<iostream>
 #include<cstring>
-#include<user.h>
+#include"user.h"
 using namespace std;
 
-class admin: protected user{
-    protected : 
+class admin: public user{
+    private : 
     int adminId;
     string password;
-    bool authenciate = false;
+    bool isAuthenticated = false;
 
     public : 
+        // Constructors
+        admin();
+        admin(string pname, string pcontactNumber, int padminId, string ppassword);
         // getter
         int get_adminId();
-        string get_password();
-        bool get_authenciate();
-
-        // setter
-        void set_adminId();
-        void set_password();
-        void set_authenciate();
+        bool get_isAuthenticated();
+        bool authenticate(string inputPassword);
 };
 
 #endif

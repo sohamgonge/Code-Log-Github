@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+</head>
+
+<body>
+    <h1>User Details</h1>
+    <form method="post">
+        <div>
+            <label for="username">Name :
+                <input type="text" name="username" id="username" placeholder="Enter your name" autofocus />
+            </label>
+        </div>
+        <div>
+            <label>
+                City :
+                <select name="city" id="city">
+                    <option value="None">Select</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Yavatmal">Yavatmal</option>
+                    <option value="Amravati">Amravati</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Nasik">Nasik</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label for="pincode">Pincode :
+                <input type="text" id="pincode" name="pincode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6"
+                    required />
+            </label>
+        </div>
+    </form>
+</body>
+
+</html>

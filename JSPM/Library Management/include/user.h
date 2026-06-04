@@ -1,26 +1,24 @@
 #ifndef USER_H
 #define USER_H
 
-#include<iostream>
-#include<cstring>
-using namespace std; 
+#include <iostream>
+using namespace std;
 
-class user{
-    protected : 
-        string name;
-        int contactNumber;
+class user
+{
+protected:
+    string name;
+    string contactNumber;
 
-    public : 
-    user::user();
-    user::user(string pname, int pcontactNumber);
-    // setters
-    string set_name();
-    int set_contactNumber();
-    
-    // getters
-    string get_name();
-    int get_contactNumber();
+public:
+    user();
+    user(string pname, string pcontactNumber);
 
+    void set_name(string pname);
+    void set_contactNumber(string pcontactNumber);
+
+    string get_name() const;
+    string get_contactNumber() const;
 };
 
 #endif

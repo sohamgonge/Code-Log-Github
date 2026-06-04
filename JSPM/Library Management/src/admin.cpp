@@ -1,28 +1,37 @@
-#include<iostream>
-#include<cstring>
-#include<admin.h>
-#include<user.h>
+#include <iostream>
+#include <cstring>
+#include "admin.h"
+#include "user.h"
 using namespace std;
 
+admin::admin()
+{
+}
+admin::admin(string pname, string pcontactNumber, int padminId, string ppassword)
+{
+    name = pname;
+    contactNumber = pcontactNumber;
+    adminId = padminId;
+    password = ppassword;
+}
 // getter
-int admin :: get_adminId(){
-
+int admin::get_adminId()
+{
+    return adminId;
 }
-string admin :: get_password(){
-
+bool admin::get_isAuthenticated()
+{
+    return isAuthenticated;
 }
-bool admin :: get_authenciate(){
-
+bool admin::authenticate(string inputPassword)
+{
+    if (password == inputPassword)
+    {
+        isAuthenticated = true;
+        return true;
+    }
+    else{
+        return false;
+    }
+    
 }
-
-// setter
-void admin :: set_password(){
-
-}
-void admin :: set_authenciate(){
-
-}
-void admin :: set_adminId(){
-
-}
-

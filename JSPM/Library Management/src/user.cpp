@@ -1,20 +1,31 @@
-#include<iostream>
-#include<cstring>
-#include<user.h>
+#include <iostream>
+#include "user.h"
 using namespace std;
 
-    user::user()= default;
-    user::user(string pname, int pcontactNumber){
-        name = pname;
-        contactNumber = pcontactNumber;
-    }
+user::user() {}
 
-    // setters
-    string set_name();
-    int set_contactNumber();
-    
-    // getters
-    string get_name();
-    int get_contactNumber();
+user::user(string pname, string pcontactNumber)
+{
+    name = pname;
+    contactNumber = pcontactNumber;
+}
 
+void user::set_name(string pname)
+{
+    name = pname;
+}
 
+void user::set_contactNumber(string pcontactNumber)
+{
+    contactNumber = pcontactNumber;
+}
+
+string user::get_name() const
+{
+    return name;
+}
+
+string user::get_contactNumber() const
+{
+    return contactNumber;
+}

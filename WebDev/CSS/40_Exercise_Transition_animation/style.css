@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1000px;
+    height: 500px;
+    background-color: blue;
+    margin: 5px;
+    position: relative;
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.bounce {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode;; */
+    animation: Xaxis 4s linear 1 forwards;
+}
+
+.ybounce {
+    /* animation: Yaxis 1s cubic-bezier(0, 0.53, 0.58, 1) 2s 4 alternate; */
+    animation: Yaxis 2s 2 alternate;
+    /* animation: Yaxis 1s ease-out 2s 4 alternate; */
+}
+
+@keyframes Xaxis {
+    from {
+
+        transform: translateX(5px);
+    }
+
+    to {
+        transform: translateX(850px);
+    }
+}
+
+@keyframes Yaxis {
+    0% {
+
+        transform: translateY(505px);
+        animation-timing-function: cubic-bezier(0.1, 0.7, 0.4, 1);
+    }
+
+    50% {
+        transform: translateY(205px);
+        /* animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.33); */
+        animation-timing-function: cubic-bezier(0.6, 0, 0.93, 0.27);
+    }
+
+    100% {
+        transform: translateY(505px);
+    }
+}

@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Library Report</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.6; padding: 40px; }
+h1, h2, h3 { color: #333; }
+pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<p>Library Management System</p><p>Report
+</p><p>Division: I</p><p>Professor: Dr. Bhagyashri S Deshpande</p><p>
+Students:</p><p>Soham Gonge - RBT25CB063</p><p>Aayush Kumar - RBT25CB045</p><p>Ritesh Buchade - RBT25CB045</p><p></p><h1>1) Existing System &amp; Need for System</h1><pre>Traditional library systems rely heavily on manual record-keeping, which leads to inefficiencies, errors, and difficulty in tracking issued and returned books. This project addresses these limitations by introducing a digital system.</pre><h1>2) Scope of Work</h1><p>The system manages books, users, members, and transactions such as issuing and returning books.</p><h1>3) Proposed System (Module Description)</h1><p>Modules include Book Management, User Management, Member Management, and Library Transaction Management.</p><h1>4) Objective of System</h1><p>To create an efficient, reliable, and scalable library management system using C++.</p><h1>5) Operating Environment</h1><p>Software: C++ (G++), macOS/Linux
+Hardware: Standard PC/Laptop</p><h1>6) Code of Project</h1><h2>user.h</h2><pre>#ifndef USER_H
+#define USER_H
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class user
+{
+protected:
+    string name;
+    string contactNumber;
+
+public:
+    user();
+    user(string pname, string pcontactNumber);
+
+    void set_name(string pname);
+    void set_contactNumber(string pcontactNumber);
+
+    string get_name() const;
+    string get_contactNumber() const;
+};
+
+#endif</pre><h2>admin.h</h2><pre>#ifndef ADMIN_H
+#define ADMIN_H
+
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&quot;user.h&quot;
+using namespace std;
+
+class admin: public user{
+    private : 
+    int adminId;
+    string password;
+    bool isAuthenticated = false;
+
+    public : 
+        // Constructors
+        admin();
+        admin(string pname, string pcontactNumber, int padminId, string ppassword);
+        // getter
+        int get_adminId();
+        bool get_isAuthenticated();
+        bool authenticate(string inputPassword);
+};
+
+#endif</pre><h2>member.h</h2><pre>#ifndef MEMBER_H
+#define MEMBER_H
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &quot;user.h&quot;
+using namespace std;
+
+class member : public user
+{
+private:
+    int memberId;
+    vector&lt;string&gt; borrowedBooks; // stores ISBNs as strings
+
+public:
+    member();
+    member(string pname, string pcontactNumber, int pmemberId);
+
+    // getters
+    int get_memberId() const;
+    vector&lt;string&gt; get_borrowedBooks() const;
+
+    // setters
+    void set_memberId(int pmemberId);
+    void addBorrowedBook(string isbn);
+    void removeBorrowedBook(string isbn);
+    float calculateFine(int pdaysOverDue); // Rs.2 per day
+};
+
+#endif</pre><h2>library.h</h2><pre>#ifndef LIBRARY_H
+#define LIBRARY_H
+
+#include&lt;iostream&gt;
+#include &quot;book.h&quot;
+#include &quot;member.h&quot;
+using namespace std;
+
+class library
+{
+private:
+    vector&lt;book&gt; Books;
+    vector&lt;member&gt; Members;
+
+public:
+//    Books Management 
+    void addBook(const book&amp; b); // push_back onto books vector
+    void removeBook(string isbn); // find by isbn, erase form vector
+    void updateBook(string isbn); // find book, call setters on it
+    void searchBook(string query); // search by title or aurthor, print matches
+    void displayAllBooks(); // loop through books vectors, print each
+    void displayAvailableBooks(); // loop, print only where availableCopies&gt;0
+    void displayBorrowedBooks(); // loop, print only where availableCopies &lt; totalCopies
+    void displayOverdueBooks(); // requires due date tracking 
+    void getMostBorrowedBooks(); // sort or count borrow frequency
+
+
+    // Member Management 
+    void registerMember(member m);
+    void removeMember(int memberId);
+    bool authenticateMember(int memberId, string contact);
+
+    // Borrow &amp; Return 
+    void issueBook(int memberId, string isbn); // find member + book, decrement availableCopies, call member..addBorrowedBook()
+    void returnBook(int memberId, string isbn); // extend due date if no reservation
+    void payFine(int memberId); // call member.calculateFine(), record payment
+
+    // Persistence
+
+    void saveBooksToFile(); // write books vector to data/books.txt
+    void loadBooksFromFile(); // read data/books.txt, reconstruct books vector
+    void saveMemberToFile(); // write member vector to data/members.txt
+    void loadMembersFromFile(); // read data/members.txt, reconstruct members vector
+};
+
+
+#endif</pre><h2>book.h</h2><pre>#ifndef BOOK_H
+#define BOOK_H
+
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class book
+{
+private:
+    string title;
+    string author;
+    string genre;
+    string isbn;
+    int totalCopies;
+    int availableCopies;
+
+public:
+    // Constructors
+    book() = default;
+    book(string ptitle, string pauthor, string pgenre, string pisbn, int ptcopies, int pacopies);
+
+    // Getters
+    string get_title() const ;
+    string get_author() const ;
+    string get_genre() const ;
+    string get_isbn() const ;
+    int get_tcopies() const ;
+    int get_acopies() const ;
+
+    // Setters
+    void set_title(string ptitle);
+    void set_author(string pauthor);
+    void set_genre(string pgenre);
+    void set_isbn(string pisbn);
+    void set_tcopies(int ptcopies);
+    void set_acopies(int pacopies);
+
+    // operator overloading
+    friend ostream &amp;operator&lt;&lt;(ostream &amp;os, const book &amp;b);
+};
+#endif</pre><h2>admin(1).cpp</h2><pre>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &quot;admin.h&quot;
+#include &quot;user.h&quot;
+using namespace std;
+
+admin::admin()
+{
+}
+admin::admin(string pname, string pcontactNumber, int padminId, string ppassword)
+{
+    name = pname;
+    contactNumber = pcontactNumber;
+    adminId = padminId;
+    password = ppassword;
+}
+// getter
+int admin::get_adminId()
+{
+    return adminId;
+}
+bool admin::get_isAuthenticated()
+{
+    return isAuthenticated;
+}
+bool admin::authenticate(string inputPassword)
+{
+    if (password == inputPassword)
+    {
+        isAuthenticated = true;
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+}</pre><h2>user(1).cpp</h2><pre>#include &lt;iostream&gt;
+#include &quot;user.h&quot;
+using namespace std;
+
+user::user() {}
+
+user::user(string pname, string pcontactNumber)
+{
+    name = pname;
+    contactNumber = pcontactNumber;
+}
+
+void user::set_name(string pname)
+{
+    name = pname;
+}
+
+void user::set_contactNumber(string pcontactNumber)
+{
+    contactNumber = pcontactNumber;
+}
+
+string user::get_name() const
+{
+    return name;
+}
+
+string user::get_contactNumber() const
+{
+    return contactNumber;
+}</pre><h2>library(1).cpp</h2><pre>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+#include &quot;user.h&quot;
+#include &quot;member.h&quot;
+#include &quot;admin.h&quot;
+#include &quot;library.h&quot;
+#include &quot;book.h&quot;
+using namespace std;
+
+// ─────────────────────────────────────────────
+//  HELPER — split a line by a delimiter
+//  replaces sstream entirely
+// ─────────────────────────────────────────────
+vector&lt;string&gt; splitLine(const string &amp;line, char delim)
+{
+    vector&lt;string&gt; fields;
+    string current;
+    for (char c : line)
+    {
+        if (c == delim)
+        {
+            fields.push_back(current);
+            current = &quot;&quot;;
+        }
+        else
+        {
+            current += c;
+        }
+    }
+    fields.push_back(current); // last field
+    return fields;
+}
+
+// ─────────────────────────────────────────────
+//  BOOK MANAGEMENT
+// ─────────────────────────────────────────────
+
+void library::addBook(const book &amp;b)
+{
+    Books.push_back(b);
+    cout &lt;&lt; &quot;Book \&quot;&quot; &lt;&lt; b.get_title() &lt;&lt; &quot;\&quot; added successfully.&quot; &lt;&lt; endl;
+}
+
+void library::removeBook(string isbn)
+{
+    int idx = -1;
+    for (int i = 0; i &lt; (int)Books.size(); i++)
+    {
+        if (Books[i].get_isbn() == isbn)
+        {
+            idx = i;
+            break;
+        }
+    }
+    if (idx == -1)
+    {
+        cout &lt;&lt; &quot;Book with ISBN &quot; &lt;&lt; isbn &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    cout &lt;&lt; &quot;Book \&quot;&quot; &lt;&lt; Books[idx].get_title() &lt;&lt; &quot;\&quot; removed successfully.&quot; &lt;&lt; endl;
+    Books.erase(Books.begin() + idx);
+}
+
+void library::updateBook(string isbn)
+{
+    for (int i = 0; i &lt; (int)Books.size(); i++)
+    {
+        if (Books[i].get_isbn() == isbn)
+        {
+            string title, author, genre;
+            int tcopies, acopies;
+
+            cout &lt;&lt; &quot;Enter new title (current: &quot; &lt;&lt; Books[i].get_title() &lt;&lt; &quot;): &quot;;
+            cin.ignore();
+            getline(cin, title);
+            Books[i].set_title(title);
+
+            cout &lt;&lt; &quot;Enter new author (current: &quot; &lt;&lt; Books[i].get_author() &lt;&lt; &quot;): &quot;;
+            getline(cin, author);
+            Books[i].set_author(author);
+
+            cout &lt;&lt; &quot;Enter new genre (current: &quot; &lt;&lt; Books[i].get_genre() &lt;&lt; &quot;): &quot;;
+            getline(cin, genre);
+            Books[i].set_genre(genre);
+
+            cout &lt;&lt; &quot;Enter total copies (current: &quot; &lt;&lt; Books[i].get_tcopies() &lt;&lt; &quot;): &quot;;
+            cin &gt;&gt; tcopies;
+            Books[i].set_tcopies(tcopies);
+
+            cout &lt;&lt; &quot;Enter available copies (current: &quot; &lt;&lt; Books[i].get_acopies() &lt;&lt; &quot;): &quot;;
+            cin &gt;&gt; acopies;
+            Books[i].set_acopies(acopies);
+
+            cout &lt;&lt; &quot;Book updated successfully.&quot; &lt;&lt; endl;
+            return;
+        }
+    }
+    cout &lt;&lt; &quot;Book with ISBN &quot; &lt;&lt; isbn &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+}
+
+void library::searchBook(string query)
+{
+    string lowerQuery = query;
+    transform(lowerQuery.begin(), lowerQuery.end(), lowerQuery.begin(),
+              [](unsigned char c)
+              { return tolower(c); });
+
+    cout &lt;&lt; &quot;\n--- Search Results for \&quot;&quot; &lt;&lt; query &lt;&lt; &quot;\&quot; ---&quot; &lt;&lt; endl;
+    bool found = false;
+    for (auto &amp;b : Books)
+    {
+        string lowerTitle = b.get_title();
+        string lowerAuthor = b.get_author();
+        transform(lowerTitle.begin(), lowerTitle.end(), lowerTitle.begin(),
+                  [](unsigned char c)
+                  { return tolower(c); }); // lamda function
+        transform(lowerAuthor.begin(), lowerAuthor.end(), lowerAuthor.begin(),
+                  [](unsigned char c)
+                  { return tolower(c); });
+
+        if (lowerTitle.find(lowerQuery) != string::npos ||
+            lowerAuthor.find(lowerQuery) != string::npos)
+        {
+            cout &lt;&lt; b &lt;&lt; endl;
+            found = true;
+        }
+    }
+    if (!found)
+        cout &lt;&lt; &quot;No books found matching: &quot; &lt;&lt; query &lt;&lt; endl;
+}
+
+void library::displayAllBooks()
+{
+    if (Books.empty())
+    {
+        cout &lt;&lt; &quot;No books in the library.&quot; &lt;&lt; endl;
+        return;
+    }
+    cout &lt;&lt; &quot;\n--- All Books ---&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;Title | Author | Genre | ISBN | Available/Total&quot; &lt;&lt; endl;
+    cout &lt;&lt; string(60, &#x27;-&#x27;) &lt;&lt; endl;
+    for (auto &amp;b : Books)
+        cout &lt;&lt; b &lt;&lt; endl;
+}
+
+void library::displayAvailableBooks()
+{
+    cout &lt;&lt; &quot;\n--- Available Books ---&quot; &lt;&lt; endl;
+    bool found = false;
+    for (auto &amp;b : Books)
+        if (b.get_acopies() &gt; 0)
+        {
+            cout &lt;&lt; b &lt;&lt; endl;
+            found = true;
+        }
+    if (!found)
+        cout &lt;&lt; &quot;No available books at the moment.&quot; &lt;&lt; endl;
+}
+
+void library::displayBorrowedBooks()
+{
+    cout &lt;&lt; &quot;\n--- Currently Borrowed Books ---&quot; &lt;&lt; endl;
+    bool found = false;
+    for (auto &amp;b : Books)
+        if (b.get_acopies() &lt; b.get_tcopies())
+        {
+            cout &lt;&lt; b &lt;&lt; endl;
+            found = true;
+        }
+    if (!found)
+        cout &lt;&lt; &quot;No books are currently borrowed.&quot; &lt;&lt; endl;
+}
+
+void library::displayOverdueBooks()
+{
+    cout &lt;&lt; &quot;\n--- Overdue Books ---&quot; &lt;&lt; endl;
+    ifstream fin(&quot;transaction.txt&quot;);
+    if (!fin.is_open())
+    {
+        cout &lt;&lt; &quot;Could not open transaction file.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    bool found = false;
+    string line;
+    // Format: memberId|isbn|issueDate|dueDate|returned(0/1)
+    while (getline(fin, line))
+    {
+        if (line.empty())
+            continue;
+        vector&lt;string&gt; f = splitLine(line, &#x27;|&#x27;);
+        if (f.size() &gt;= 5 &amp;&amp; f[4] == &quot;0&quot;)
+        {
+            cout &lt;&lt; &quot;Member ID: &quot; &lt;&lt; f[0] &lt;&lt; &quot; | ISBN: &quot; &lt;&lt; f[1]
+                 &lt;&lt; &quot; | Due: &quot; &lt;&lt; f[3] &lt;&lt; &quot; (not returned)&quot; &lt;&lt; endl;
+            found = true;
+        }
+    }
+    fin.close();
+    if (!found)
+        cout &lt;&lt; &quot;No overdue books found.&quot; &lt;&lt; endl;
+}
+
+void library::getMostBorrowedBooks()
+{
+    // reads transaction.txt and counts how many times each isbn appears
+    ifstream fin(&quot;transaction.txt&quot;);
+    if (!fin.is_open())
+    {
+        cout &lt;&lt; &quot;Could not open transaction file.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    vector&lt;string&gt; isbnList;
+    vector&lt;int&gt; countList;
+
+    string line;
+    while (getline(fin, line))
+    {
+        if (line.empty())
+            continue;
+        vector&lt;string&gt; f = splitLine(line, &#x27;|&#x27;);
+        if (f.size() &lt; 2)
+            continue;
+
+        string isbn = f[1];
+        bool found = false;
+        for (int i = 0; i &lt; (int)isbnList.size(); i++)
+        {
+            if (isbnList[i] == isbn)
+            {
+                countList[i]++;
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            isbnList.push_back(isbn);
+            countList.push_back(1);
+        }
+    }
+    fin.close();
+
+    if (isbnList.empty())
+    {
+        cout &lt;&lt; &quot;No borrow history available.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    // simple selection sort by count descending
+    for (int i = 0; i &lt; (int)isbnList.size() - 1; i++)
+        for (int j = i + 1; j &lt; (int)isbnList.size(); j++)
+            if (countList[j] &gt; countList[i])
+            {
+                swap(countList[i], countList[j]);
+                swap(isbnList[i], isbnList[j]);
+            }
+
+    cout &lt;&lt; &quot;\n--- Most Borrowed Books ---&quot; &lt;&lt; endl;
+    for (int i = 0; i &lt; (int)isbnList.size(); i++)
+    {
+        string title = isbnList[i]; // fallback to isbn if book not found
+        for (auto &amp;b : Books)
+            if (b.get_isbn() == isbnList[i])
+            {
+                title = b.get_title();
+                break;
+            }
+        cout &lt;&lt; title &lt;&lt; &quot; (ISBN: &quot; &lt;&lt; isbnList[i] &lt;&lt; &quot;) - borrowed &quot;
+             &lt;&lt; countList[i] &lt;&lt; &quot; time(s)&quot; &lt;&lt; endl;
+    }
+}
+
+// ─────────────────────────────────────────────
+//  MEMBER MANAGEMENT
+// ─────────────────────────────────────────────
+
+void library::registerMember(member m)
+{
+    for (auto &amp;existing : Members)
+    {
+        if (existing.get_memberId() == m.get_memberId())
+        {
+            cout &lt;&lt; &quot;Member ID &quot; &lt;&lt; m.get_memberId() &lt;&lt; &quot; already exists.&quot; &lt;&lt; endl;
+            return;
+        }
+    }
+    Members.push_back(m);
+    cout &lt;&lt; &quot;Member \&quot;&quot; &lt;&lt; m.get_name() &lt;&lt; &quot;\&quot; registered successfully.&quot; &lt;&lt; endl;
+}
+
+void library::removeMember(int memberId)
+{
+    int idx = -1;
+    for (int i = 0; i &lt; (int)Members.size(); i++)
+        if (Members[i].get_memberId() == memberId)
+        {
+            idx = i;
+            break;
+        }
+
+    if (idx == -1)
+    {
+        cout &lt;&lt; &quot;Member ID &quot; &lt;&lt; memberId &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    if (!Members[idx].get_borrowedBooks().empty())
+    {
+        cout &lt;&lt; &quot;Cannot remove member - they still have borrowed books.&quot; &lt;&lt; endl;
+        return;
+    }
+    cout &lt;&lt; &quot;Member \&quot;&quot; &lt;&lt; Members[idx].get_name() &lt;&lt; &quot;\&quot; removed.&quot; &lt;&lt; endl;
+    Members.erase(Members.begin() + idx);
+}
+
+bool library::authenticateMember(int memberId, string contact)
+{
+    for (auto &amp;m : Members)
+        if (m.get_memberId() == memberId &amp;&amp; m.get_contactNumber() == contact)
+            return true;
+    return false;
+}
+
+// ─────────────────────────────────────────────
+//  BORROW &amp; RETURN
+// ─────────────────────────────────────────────
+
+void library::issueBook(int memberId, string isbn)
+{
+    member *m = nullptr;
+    for (auto &amp;mem : Members)
+        if (mem.get_memberId() == memberId)
+        {
+            m = &amp;mem;
+            break;
+        }
+    if (!m)
+    {
+        cout &lt;&lt; &quot;Member ID &quot; &lt;&lt; memberId &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    book *b = nullptr;
+    for (auto &amp;bk : Books)
+        if (bk.get_isbn() == isbn)
+        {
+            b = &amp;bk;
+            break;
+        }
+    if (!b)
+    {
+        cout &lt;&lt; &quot;Book with ISBN &quot; &lt;&lt; isbn &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    if (b-&gt;get_acopies() &lt;= 0)
+    {
+        cout &lt;&lt; &quot;No available copies of \&quot;&quot; &lt;&lt; b-&gt;get_title() &lt;&lt; &quot;\&quot;.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    b-&gt;set_acopies(b-&gt;get_acopies() - 1);
+    m-&gt;addBorrowedBook(isbn); // isbn stays as string — no stoi
+
+    ofstream fout(&quot;transaction.txt&quot;, ios::app);
+    if (fout.is_open())
+    {
+        fout &lt;&lt; memberId &lt;&lt; &quot;|&quot; &lt;&lt; isbn &lt;&lt; &quot;|today|+14days|0\n&quot;;
+        fout.close();
+    }
+
+    cout &lt;&lt; &quot;Book \&quot;&quot; &lt;&lt; b-&gt;get_title() &lt;&lt; &quot;\&quot; issued to \&quot;&quot; &lt;&lt; m-&gt;get_name() &lt;&lt; &quot;\&quot;.&quot; &lt;&lt; endl;
+}
+
+void library::returnBook(int memberId, string isbn)
+{
+    member *m = nullptr;
+    for (auto &amp;mem : Members)
+        if (mem.get_memberId() == memberId)
+        {
+            m = &amp;mem;
+            break;
+        }
+    if (!m)
+    {
+        cout &lt;&lt; &quot;Member ID &quot; &lt;&lt; memberId &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    book *b = nullptr;
+    for (auto &amp;bk : Books)
+        if (bk.get_isbn() == isbn)
+        {
+            b = &amp;bk;
+            break;
+        }
+    if (!b)
+    {
+        cout &lt;&lt; &quot;Book with ISBN &quot; &lt;&lt; isbn &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    m-&gt;removeBorrowedBook(isbn); // isbn stays as string — no stoi
+    b-&gt;set_acopies(b-&gt;get_acopies() + 1);
+
+    // mark transaction as returned (flip trailing 0 to 1)
+    ifstream fin(&quot;transaction.txt&quot;);
+    string allContent, line;
+    string key = to_string(memberId) + &quot;|&quot; + isbn;
+    while (getline(fin, line))
+    {
+        if (line.find(key) != string::npos &amp;&amp; !line.empty() &amp;&amp; line.back() == &#x27;0&#x27;)
+            line.back() = &#x27;1&#x27;;
+        allContent += line + &quot;\n&quot;;
+    }
+    fin.close();
+
+    ofstream fout(&quot;transaction.txt&quot;);
+    fout &lt;&lt; allContent;
+    fout.close();
+
+    cout &lt;&lt; &quot;Book \&quot;&quot; &lt;&lt; b-&gt;get_title() &lt;&lt; &quot;\&quot; returned by \&quot;&quot; &lt;&lt; m-&gt;get_name() &lt;&lt; &quot;\&quot;.&quot; &lt;&lt; endl;
+}
+
+void library::payFine(int memberId)
+{
+    member *m = nullptr;
+    for (auto &amp;mem : Members)
+        if (mem.get_memberId() == memberId)
+        {
+            m = &amp;mem;
+            break;
+        }
+    if (!m)
+    {
+        cout &lt;&lt; &quot;Member ID &quot; &lt;&lt; memberId &lt;&lt; &quot; not found.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    int daysOverdue;
+    cout &lt;&lt; &quot;Enter number of overdue days for \&quot;&quot; &lt;&lt; m-&gt;get_name() &lt;&lt; &quot;\&quot;: &quot;;
+    cin &gt;&gt; daysOverdue;
+
+    float fine = m-&gt;calculateFine(daysOverdue);
+    cout &lt;&lt; &quot;Fine for &quot; &lt;&lt; daysOverdue &lt;&lt; &quot; overdue day(s): Rs.&quot; &lt;&lt; fine &lt;&lt; endl;
+    cout &lt;&lt; &quot;Fine paid successfully.&quot; &lt;&lt; endl;
+}
+
+// ─────────────────────────────────────────────
+//  PERSISTENCE
+// ─────────────────────────────────────────────
+
+void library::saveBooksToFile()
+{
+    ofstream fout(&quot;book.txt&quot;);
+    if (!fout.is_open())
+    {
+        cout &lt;&lt; &quot;book.txt.&quot; &lt;&lt; endl;
+        // cout &lt;&lt; &quot;Error opening data/book.txt.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    fout &lt;&lt; &quot;title|author|genre|isbn|totalCopies|availableCopies\n&quot;;
+    for (auto &amp;b : Books)
+        fout &lt;&lt; b.get_title() &lt;&lt; &quot;|&quot; &lt;&lt; b.get_author() &lt;&lt; &quot;|&quot;
+             &lt;&lt; b.get_genre() &lt;&lt; &quot;|&quot; &lt;&lt; b.get_isbn() &lt;&lt; &quot;|&quot;
+             &lt;&lt; b.get_tcopies() &lt;&lt; &quot;|&quot; &lt;&lt; b.get_acopies() &lt;&lt; &quot;\n&quot;;
+    fout.close();
+    cout &lt;&lt; &quot;Books saved.&quot; &lt;&lt; endl;
+}
+
+void library::loadBooksFromFile()
+{
+    ifstream fin(&quot;book.txt&quot;);
+    if (!fin.is_open())
+    {
+        cout &lt;&lt; &quot;book.txt not found, starting with empty library.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    Books.clear();
+    string line;
+    getline(fin, line); // skip header
+
+    while (getline(fin, line))
+    {
+        if (line.empty())
+            continue;
+        vector&lt;string&gt; f = splitLine(line, &#x27;|&#x27;);
+        if (f.size() &lt; 6)
+            continue;
+        Books.push_back(book(f[0], f[1], f[2], f[3], stoi(f[4]), stoi(f[5])));
+    }
+    fin.close();
+    cout &lt;&lt; &quot;Books loaded: &quot; &lt;&lt; Books.size() &lt;&lt; endl;
+}
+
+void library::saveMemberToFile()
+{
+    ofstream fout(&quot;members.txt&quot;);
+    if (!fout.is_open())
+    {
+        cout &lt;&lt; &quot;members.txt.&quot; &lt;&lt; endl;
+        // cout &lt;&lt; &quot;Error opening data/members.txt.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    fout &lt;&lt; &quot;name|contactNumber|memberId\n&quot;;
+    for (auto &amp;m : Members)
+        fout &lt;&lt; m.get_name() &lt;&lt; &quot;|&quot; &lt;&lt; m.get_contactNumber() &lt;&lt; &quot;|&quot; &lt;&lt; m.get_memberId() &lt;&lt; &quot;\n&quot;;
+    fout.close();
+    cout &lt;&lt; &quot;Members saved.&quot; &lt;&lt; endl;
+}
+
+void library::loadMembersFromFile()
+{
+    ifstream fin(&quot;members.txt&quot;);
+    if (!fin.is_open())
+    {
+        cout &lt;&lt; &quot;members.txt.&quot; &lt;&lt; endl;
+        // cout &lt;&lt; &quot;Error opening data/members.txt.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    Members.clear();
+    string line;
+    getline(fin, line); // skip header
+
+    while (getline(fin, line))
+    {
+        if (line.empty())
+            continue;
+        vector&lt;string&gt; f = splitLine(line, &#x27;|&#x27;);
+        if (f.size() &lt; 3)
+            continue;
+        Members.push_back(member(f[0], f[1], stoi(f[2])));
+    }
+    fin.close();
+    cout &lt;&lt; &quot;Members loaded: &quot; &lt;&lt; Members.size() &lt;&lt; endl;
+}</pre><h2>member(1).cpp</h2><pre>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &quot;member.h&quot;
+#include &quot;user.h&quot;
+using namespace std;
+
+member::member() {}
+
+member::member(string pname, string pcontactNumber, int pmemberId)
+    : user(pname, pcontactNumber)
+{
+    memberId = pmemberId;
+}
+
+int member::get_memberId() const
+{
+    return memberId;
+}
+
+vector&lt;string&gt; member::get_borrowedBooks() const
+{
+    return borrowedBooks;
+}
+
+void member::set_memberId(int pmemberId)
+{
+    memberId = pmemberId;
+}
+
+void member::addBorrowedBook(string isbn)
+{
+    borrowedBooks.push_back(isbn);
+}
+
+void member::removeBorrowedBook(string isbn)
+{
+    int idx = -1;
+    for (int i = 0; i &lt; (int)borrowedBooks.size(); i++)
+    {
+        if (borrowedBooks[i] == isbn)
+        {
+            idx = i;
+            break;
+        }
+    }
+
+    if (idx == -1)
+    {
+        cout &lt;&lt; &quot;ISBN &quot; &lt;&lt; isbn &lt;&lt; &quot; not found in borrowed list.&quot; &lt;&lt; endl;
+        return;
+    }
+
+    borrowedBooks.erase(borrowedBooks.begin() + idx);
+}
+
+float member::calculateFine(int pdaysOverDue)
+{
+    return 2.0f * pdaysOverDue;
+}</pre><h2>book(1).cpp</h2><pre>#include &lt;iostream&gt;
+#include &quot;book.h&quot;
+
+book ::book(string ptitle, string pauthor, string pgenre, string pisbn, int ptcopies, int pacopies)
+{
+    title = ptitle;
+    author = pauthor;
+    genre = pgenre;
+    isbn = pisbn;
+    totalCopies = ptcopies;
+    availableCopies = pacopies;
+}
+
+string book ::get_title() const
+{
+    return title;
+}
+string book ::get_author() const
+{
+    return author;
+}
+string book ::get_genre() const
+{
+    return genre;
+}
+string book ::get_isbn() const
+{
+    return isbn;
+}
+
+int book ::get_tcopies() const
+{
+    return totalCopies;
+}
+int book ::get_acopies() const
+{
+    return availableCopies;
+}
+
+void book ::set_title(string ptitle)
+{
+    title = ptitle;
+}
+void book ::set_author(string pauthor)
+{
+    author = pauthor;
+}
+void book ::set_genre(string pgenre)
+{
+    genre = pgenre;
+}
+void book ::set_isbn(string pisbn)
+{
+    isbn = pisbn;
+}
+void book ::set_tcopies(int ptcopies)
+{
+    totalCopies = ptcopies;
+}
+void book ::set_acopies(int pacopies)
+{
+    availableCopies = pacopies;
+}
+
+ostream&amp; operator&lt;&lt;(ostream&amp; os, const book&amp; b) {
+    os &lt;&lt; b.title &lt;&lt; &quot; | &quot; &lt;&lt; b.author &lt;&lt; &quot; | &quot; &lt;&lt; b.genre
+       &lt;&lt; &quot; | &quot; &lt;&lt; b.isbn &lt;&lt; &quot; | &quot; &lt;&lt; b.availableCopies &lt;&lt; &quot;/&quot; &lt;&lt; b.totalCopies;
+    return os;
+}</pre><h2>main(1).cpp</h2><pre>#include &lt;iostream&gt;
+#include &lt;limits&gt;
+#include &quot;library.h&quot;
+#include &quot;book.h&quot;
+#include &quot;member.h&quot;
+#include &quot;admin.h&quot;
+using namespace std;
+
+// ─────────────────────────────────────────────
+//  HELPERS
+// ─────────────────────────────────────────────
+
+void clearScreen() { cout &lt;&lt; &quot;\033[2J\033[1;1H&quot;; }
+
+void pause()
+{
+    cout &lt;&lt; &quot;\nPress Enter to continue...&quot;;
+    cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#x27;\n&#x27;);
+    cin.get();
+}
+
+void printHeader(const string &amp;title)
+{
+    cout &lt;&lt; &quot;\n╔══════════════════════════════════╗\n&quot;;
+    cout &lt;&lt; &quot;║  &quot; &lt;&lt; title;
+    int pad = 32 - (int)title.size();
+    for (int i = 0; i &lt; pad; i++)
+        cout &lt;&lt; &#x27; &#x27;;
+    cout &lt;&lt; &quot;║\n&quot;;
+    cout &lt;&lt; &quot;╚══════════════════════════════════╝\n&quot;;
+}
+
+// ─────────────────────────────────────────────
+//  ADMIN MENUS
+// ─────────────────────────────────────────────
+
+void adminBookMenu(library &amp;lib)
+{
+    int choice;
+    do
+    {
+        clearScreen();
+        printHeader(&quot;BOOK MANAGEMENT [ADMIN]&quot;);
+        cout &lt;&lt; &quot;1. Add Book\n&quot;;
+        cout &lt;&lt; &quot;2. Remove Book\n&quot;;
+        cout &lt;&lt; &quot;3. Update Book\n&quot;;
+        cout &lt;&lt; &quot;4. Search Book\n&quot;;
+        cout &lt;&lt; &quot;5. Display All Books\n&quot;;
+        cout &lt;&lt; &quot;6. Display Available Books\n&quot;;
+        cout &lt;&lt; &quot;7. Display Borrowed Books\n&quot;;
+        cout &lt;&lt; &quot;8. Display Overdue Books\n&quot;;
+        cout &lt;&lt; &quot;9. Most Borrowed Books\n&quot;;
+        cout &lt;&lt; &quot;0. Back\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1)
+        {
+            string title, author, genre, isbn;
+            int tc, ac;
+            cin.ignore();
+            cout &lt;&lt; &quot;Title: &quot;;
+            getline(cin, title);
+            cout &lt;&lt; &quot;Author: &quot;;
+            getline(cin, author);
+            cout &lt;&lt; &quot;Genre: &quot;;
+            getline(cin, genre);
+            cout &lt;&lt; &quot;ISBN: &quot;;
+            getline(cin, isbn);
+            cout &lt;&lt; &quot;Total copies: &quot;;
+            cin &gt;&gt; tc;
+            cout &lt;&lt; &quot;Available copies: &quot;;
+            cin &gt;&gt; ac;
+            lib.addBook(book(title, author, genre, isbn, tc, ac));
+        }
+        else if (choice == 2)
+        {
+            string isbn;
+            cout &lt;&lt; &quot;ISBN: &quot;;
+            cin &gt;&gt; isbn;
+            lib.removeBook(isbn);
+        }
+        else if (choice == 3)
+        {
+            string isbn;
+            cout &lt;&lt; &quot;ISBN: &quot;;
+            cin &gt;&gt; isbn;
+            lib.updateBook(isbn);
+        }
+        else if (choice == 4)
+        {
+            string q;
+            cin.ignore();
+            cout &lt;&lt; &quot;Search: &quot;;
+            getline(cin, q);
+            lib.searchBook(q);
+        }
+        else if (choice == 5)
+            lib.displayAllBooks();
+        else if (choice == 6)
+            lib.displayAvailableBooks();
+        else if (choice == 7)
+            lib.displayBorrowedBooks();
+        else if (choice == 8)
+            lib.displayOverdueBooks();
+        else if (choice == 9)
+            lib.getMostBorrowedBooks();
+
+        if (choice != 0)
+            pause();
+
+    } while (choice != 0);
+}
+
+void adminMemberMenu(library &amp;lib)
+{
+    int choice;
+    do
+    {
+        clearScreen();
+        printHeader(&quot;MEMBER MANAGEMENT [ADMIN]&quot;);
+        cout &lt;&lt; &quot;1. Register Member\n&quot;;
+        cout &lt;&lt; &quot;2. Remove Member\n&quot;;
+        cout &lt;&lt; &quot;0. Back\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1)
+        {
+            string name, contact;
+            int id;
+            cin.ignore();
+            cout &lt;&lt; &quot;Name: &quot;;
+            getline(cin, name);
+            cout &lt;&lt; &quot;Contact Number: &quot;;
+            getline(cin, contact);
+            cout &lt;&lt; &quot;Member ID: &quot;;
+            cin &gt;&gt; id;
+            lib.registerMember(member(name, contact, id));
+        }
+        else if (choice == 2)
+        {
+            int id;
+            cout &lt;&lt; &quot;Member ID: &quot;;
+            cin &gt;&gt; id;
+            lib.removeMember(id);
+        }
+
+        if (choice != 0)
+            pause();
+
+    } while (choice != 0);
+}
+
+void adminBorrowMenu(library &amp;lib)
+{
+    int choice;
+    do
+    {
+        clearScreen();
+        printHeader(&quot;BORROW &amp; RETURN [ADMIN]&quot;);
+        cout &lt;&lt; &quot;1. Issue Book to Member\n&quot;;
+        cout &lt;&lt; &quot;2. Return Book from Member\n&quot;;
+        cout &lt;&lt; &quot;3. Collect Fine\n&quot;;
+        cout &lt;&lt; &quot;0. Back\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1)
+        {
+            int id;
+            string isbn;
+            cout &lt;&lt; &quot;Member ID: &quot;;
+            cin &gt;&gt; id;
+            cout &lt;&lt; &quot;ISBN: &quot;;
+            cin &gt;&gt; isbn;
+            lib.issueBook(id, isbn);
+        }
+        else if (choice == 2)
+        {
+            int id;
+            string isbn;
+            cout &lt;&lt; &quot;Member ID: &quot;;
+            cin &gt;&gt; id;
+            cout &lt;&lt; &quot;ISBN: &quot;;
+            cin &gt;&gt; isbn;
+            lib.returnBook(id, isbn);
+        }
+        else if (choice == 3)
+        {
+            int id;
+            cout &lt;&lt; &quot;Member ID: &quot;;
+            cin &gt;&gt; id;
+            lib.payFine(id);
+        }
+
+        if (choice != 0)
+            pause();
+
+    } while (choice != 0);
+}
+
+void adminDashboard(library &amp;lib)
+{
+    int choice;
+    do
+    {
+        clearScreen();
+        printHeader(&quot;ADMIN DASHBOARD&quot;);
+        cout &lt;&lt; &quot;1. Book Management\n&quot;;
+        cout &lt;&lt; &quot;2. Member Management\n&quot;;
+        cout &lt;&lt; &quot;3. Borrow &amp; Return\n&quot;;
+        cout &lt;&lt; &quot;4. Save Data\n&quot;;
+        cout &lt;&lt; &quot;0. Logout\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1)
+            adminBookMenu(lib);
+        else if (choice == 2)
+            adminMemberMenu(lib);
+        else if (choice == 3)
+            adminBorrowMenu(lib);
+        else if (choice == 4)
+        {
+            lib.saveBooksToFile();
+            lib.saveMemberToFile();
+            pause();
+        }
+        else if (choice == 0)
+        {
+            lib.saveBooksToFile();
+            lib.saveMemberToFile();
+            cout &lt;&lt; &quot;Data saved. Logged out.\n&quot;;
+        }
+
+    } while (choice != 0);
+}
+
+// ─────────────────────────────────────────────
+//  MEMBER MENU
+// ─────────────────────────────────────────────
+
+void memberDashboard(library &amp;lib, int memberId)
+{
+    int choice;
+    do
+    {
+        clearScreen();
+        printHeader(&quot;MEMBER DASHBOARD&quot;);
+        cout &lt;&lt; &quot;1. Search Book\n&quot;;
+        cout &lt;&lt; &quot;2. View Available Books\n&quot;;
+        cout &lt;&lt; &quot;3. Borrow a Book\n&quot;;
+        cout &lt;&lt; &quot;4. Return a Book\n&quot;;
+        cout &lt;&lt; &quot;5. Pay Fine\n&quot;;
+        cout &lt;&lt; &quot;0. Logout\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1)
+        {
+            string q;
+            cin.ignore();
+            cout &lt;&lt; &quot;Search (title/author): &quot;;
+            getline(cin, q);
+            lib.searchBook(q);
+        }
+        else if (choice == 2)
+            lib.displayAvailableBooks();
+        else if (choice == 3)
+        {
+            string isbn;
+            cout &lt;&lt; &quot;Enter ISBN of book to borrow: &quot;;
+            cin &gt;&gt; isbn;
+            lib.issueBook(memberId, isbn);
+        }
+        else if (choice == 4)
+        {
+            string isbn;
+            cout &lt;&lt; &quot;Enter ISBN of book to return: &quot;;
+            cin &gt;&gt; isbn;
+            lib.returnBook(memberId, isbn);
+        }
+        else if (choice == 5)
+            lib.payFine(memberId);
+        else if (choice == 0)
+            cout &lt;&lt; &quot;Logged out.\n&quot;;
+
+        if (choice != 0)
+            pause();
+
+    } while (choice != 0);
+}
+
+// ─────────────────────────────────────────────
+//  LOGIN
+// ─────────────────────────────────────────────
+
+// Hardcoded admins — you can extend this to load from file
+admin admins[] = {
+    admin(&quot;Super Admin&quot;, &quot;0000000000&quot;, 1, &quot;admin123&quot;),
+    admin(&quot;Librarian&quot;, &quot;1111111111&quot;, 2, &quot;lib456&quot;)};
+int adminCount = 2;
+
+void loginScreen(library &amp;lib)
+{
+    int choice;
+    do
+    {
+        clearScreen();
+        printHeader(&quot;LIBRARY MANAGEMENT SYSTEM&quot;);
+        cout &lt;&lt; &quot;1. Login as Admin\n&quot;;
+        cout &lt;&lt; &quot;2. Login as Member\n&quot;;
+        cout &lt;&lt; &quot;0. Exit\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        // ── ADMIN LOGIN ──
+        if (choice == 1)
+        {
+            int adminId;
+            string password;
+            cout &lt;&lt; &quot;\nAdmin ID: &quot;;
+            cin &gt;&gt; adminId;
+            cout &lt;&lt; &quot;Password: &quot;;
+            cin &gt;&gt; password;
+
+            bool found = false;
+            for (int i = 0; i &lt; adminCount; i++)
+            {
+                if (admins[i].get_adminId() == adminId &amp;&amp; admins[i].authenticate(password))
+                {
+                    cout &lt;&lt; &quot;\nWelcome, &quot; &lt;&lt; admins[i].get_name() &lt;&lt; &quot;!\n&quot;;
+                    pause();
+                    adminDashboard(lib);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                cout &lt;&lt; &quot;\nInvalid Admin ID or Password.\n&quot;;
+                pause();
+            }
+        }
+
+        // ── MEMBER LOGIN ──
+        else if (choice == 2)
+        {
+            int memberId;
+            string contact;
+            cout &lt;&lt; &quot;\nMember ID: &quot;;
+            cin &gt;&gt; memberId;
+            cout &lt;&lt; &quot;Contact Number: &quot;;
+            cin &gt;&gt; contact;
+
+            bool found = lib.authenticateMember(memberId, contact);
+            if (found)
+            {
+                cout &lt;&lt; &quot;\nWelcome!\n&quot;;
+                pause();
+                memberDashboard(lib, memberId);
+            }
+            else
+            {
+                cout &lt;&lt; &quot;\nInvalid Member ID or Contact Number.\n&quot;;
+                pause();
+            }
+        }
+
+        else if (choice == 0)
+        {
+            lib.saveBooksToFile();
+            lib.saveMemberToFile();
+            cout &lt;&lt; &quot;Goodbye!\n&quot;;
+        }
+
+    } while (choice != 0);
+}
+
+// ─────────────────────────────────────────────
+//  MAIN
+// ─────────────────────────────────────────────
+
+int main()
+{
+    library lib;
+    lib.loadBooksFromFile();
+    lib.loadMembersFromFile();
+
+    loginScreen(lib);
+    return 0;
+}</pre></body></html>

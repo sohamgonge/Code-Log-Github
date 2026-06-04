@@ -1,34 +1,59 @@
 #include <iostream>
-#include <member.h>
-#include <user.h>
+#include <vector>
+#include "member.h"
+#include "user.h"
 using namespace std;
 
-member::member() = default;
-member::member(string pname, int pcontactNumber, int pmemberId, int pborrowedBooks, int pnborrowedBooks = 0) : user(pname, pcontactNumber)
+member::member() {}
+
+member::member(string pname, string pcontactNumber, int pmemberId)
+    : user(pname, pcontactNumber)
 {
     memberId = pmemberId;
-    if (pnborrowedBooks == 0)
+}
+
+int member::get_memberId() const
+{
+    return memberId;
+}
+
+vector<string> member::get_borrowedBooks() const
+{
+    return borrowedBooks;
+}
+
+void member::set_memberId(int pmemberId)
+{
+    memberId = pmemberId;
+}
+
+void member::addBorrowedBook(string isbn)
+{
+    borrowedBooks.push_back(isbn);
+}
+
+void member::removeBorrowedBook(string isbn)
+{
+    int idx = -1;
+    for (int i = 0; i < (int)borrowedBooks.size(); i++)
     {
-        pborrowedBooks{};
+        if (borrowedBooks[i] == isbn)
+        {
+            idx = i;
+            break;
+        }
     }
-    else
+
+    if (idx == -1)
     {
-        pborrowedBooks
+        cout << "ISBN " << isbn << " not found in borrowed list." << endl;
+        return;
     }
+
+    borrowedBooks.erase(borrowedBooks.begin() + idx);
 }
 
-// Getters
-
-int member::get_memberID()
+float member::calculateFine(int pdaysOverDue)
 {
-}
-
-int member::get_borrowedBooks(int i)
-{
-}
-
-// Setters
-
-void member::set_memberID()
-{
+    return 2.0f * pdaysOverDue;
 }

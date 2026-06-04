@@ -1,38 +1,47 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
+#include<iostream>
+#include "book.h"
+#include "member.h"
+using namespace std;
+
 class library
 {
 private:
-    int reqMem_id{}; // Required Members
-    int brdBooks{};  // Borrowed Books
-    string name{};   // Name
-    int cnctNo{};    // Contact Number
+    vector<book> Books;
+    vector<member> Members;
 
 public:
-    // Constructors
-    library() = default;
-    library(int preqMem_id, int pbrdBooks, string pname, int pcnctNo);
+//    Books Management 
+    void addBook(const book& b); // push_back onto books vector
+    void removeBook(string isbn); // find by isbn, erase form vector
+    void updateBook(string isbn); // find book, call setters on it
+    void searchBook(string query); // search by title or aurthor, print matches
+    void displayAllBooks(); // loop through books vectors, print each
+    void displayAvailableBooks(); // loop, print only where availableCopies>0
+    void displayBorrowedBooks(); // loop, print only where availableCopies < totalCopies
+    void displayOverdueBooks(); // requires due date tracking 
+    void getMostBorrowedBooks(); // sort or count borrow frequency
 
-    // Getters
-    int get_reqMember_id();
-    int get_brdBooks();
-    string get_name();
-    int get_cnctNo();
 
-    // Setters
-    void get_reqMember_id(int preqMem_id);
-    void get_brdBooks(int pbrdBooks);
-    void get_name(string pname);
-    void get_cnctNo(int pcnctNo);
+    // Member Management 
+    void registerMember(member m);
+    void removeMember(int memberId);
+    bool authenticateMember(int memberId, string contact);
 
-    // Functions
-    void issueBook();
+    // Borrow & Return 
+    void issueBook(int memberId, string isbn); // find member + book, decrement availableCopies, call member..addBorrowedBook()
+    void returnBook(int memberId, string isbn); // extend due date if no reservation
+    void payFine(int memberId); // call member.calculateFine(), record payment
 
-    void returnBooks();
+    // Persistence
 
-    void renewBooks();
-
-    void calculateFine();
+    void saveBooksToFile(); // write books vector to data/books.txt
+    void loadBooksFromFile(); // read data/books.txt, reconstruct books vector
+    void saveMemberToFile(); // write member vector to data/members.txt
+    void loadMembersFromFile(); // read data/members.txt, reconstruct members vector
 };
+
+
 #endif
