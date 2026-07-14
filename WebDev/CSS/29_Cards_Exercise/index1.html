@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: rgba(197, 223, 245, 0.584); /* softer blue-gray */
+            height: 100vh;
+            align-content: center;
+        }
+
+        .card {
+            width: 380px;
+            height: 600px;              /* fixed height gives card structure */
+            border: 1px solid lightgray;
+            background-color: white;
+            border-radius: 14px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .cardimage {
+            height: 45%;                /* image takes up 45% of card height */
+        }
+
+        .cardimage img {
+            width: 100%;
+            height: 100%;               /* fills the .cardimage container */
+            border-radius: 14px;
+            display: block;
+            object-fit: cover;          /* crops nicely without distortion */
+        }
+
+        .tags {
+            display: flex;
+            justify-content: start;
+            margin-top: 18px;
+            margin-left: 10px;
+        }
+
+        .hashes {
+            border: 0.2px solid rgb(197, 197, 197);
+            border-radius: 23px;
+            padding: 2px 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            color: rgba(115, 115, 115, 0.8);
+            font-weight: 400;
+        }
+
+        .all {
+            margin: 10px 10px 0px 10px; /* consistent inner inset for text content */
+        }
+
+        .title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;          /* bigger than before (was 1.5rem) */
+            font-weight: 600;
+            color: rgb(61, 69, 72);     /* soft dark slate, not harsh black */
+            margin: 12px 0px 14px 0px;
+        }
+
+        .content {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(115, 115, 115, 0.8);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: rgb(0, 162, 226);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background-color: rgba(135, 207, 235, 0.2);
+            padding: 15px 28px;         /* generous padding — feels clickable */
+            border-radius: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="cardimage">
+            <img src="card1.png" alt="error">
+        </div>
+        <div class="tags">
+            <span class="hashes">Nature</span>
+            <span class="hashes">Lake</span>
+        </div>
+        <div class="all">
+            <div class="title">Lorem, ipsum dolor.</div>
+            <div class="content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, libero dolorum qui fuga aperiam
+                fugit accusamus at nulla.
+            </div>
+            <div class="button">
+                <a href="">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

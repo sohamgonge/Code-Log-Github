@@ -1,6 +1,12 @@
 {
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "he",
+            "request": "launch",
+            "mainClass": "he",
+            "projectName": "Code-Log-Github_31f01544"
+        },
         {
             "name": "C/C++: clang++ build and debug active file",
             "type": "cppdbg",

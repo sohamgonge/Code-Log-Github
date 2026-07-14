@@ -7,30 +7,34 @@ int main()
     int arr[5] = {1, 2, 3, 4, 5};
 
     // Brute Force O(N3)
-    // for (int st = 0; st < n; st++)
+    // for (int st = 0; st < n; st++)// this tell how many rows 
     // {
-    //     for (int en = st; en < n; en++)
+    //     for (int en = st; en < n; en++) // this helps to add new element to the output
     //     {
-    //         for (int i = st; i <= en; i++)
+    //         for (int i = st; i <= en; i++)// this does major magic starts from 0 till the end element allowed by the previous loop is achieved
     //         {
     //             cout << arr[i];
     //         }
-    //         cout << " ";
+    //         cout << " ";// this prints space after completion of printing the last new element adddition
     //     }
-    //     cout << endl;
+    //     cout << endl;// new row start with next element
     // }
-
+    
+    // cout << endl;
+    // cout << endl;
     // Brute Force O(N2)
-    // int maxSum = INT_MIN;
+    // int maXSum = INT_MIN;
     // for(int st = 0 ; st < n ; st++){
     //     int currSum = 0;
     //     for (int en = st; en < n; en++)
     //     {
     //         currSum +=arr[en];
-    //         maxSum = max(currSum,maxSum);
+    //         maXSum = max(currSum,maXSum);
     //     }
-        
     // }
+    // cout << maXSum;
+    // cout << endl;
+    // cout << endl;
     // cout << "max subarray sum = " << maxSum <<endl;
 
     // Kadane's Algorithm

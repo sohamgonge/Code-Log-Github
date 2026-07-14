@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Demo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+        }
+        nav ul li{
+            text-decoration: none;
+            display: inline-block;
+            padding: 25px;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400 ;
+
+        }
+        nav{
+            background-color: bisque;
+        }
+        .section1{
+            height: 650px;
+            width: 100vw;
+            padding : 50px;
+            background-color: rgb(251, 203, 145);
+            text-align: center;
+        }
+        .box{
+            display: inline-block;
+            width: 500px;
+            height: 550px;
+            /* margin : 50px; */
+            background-color: rgb(231, 146, 42);
+            border-radius: 10px;
+
+        }
+        .box1{
+            margin-right: 40px;
+        }
+        .box2{
+            margin-left: 40px;
+        }
+        .more{
+            width: 100vw;
+            padding : 20px 20px 20px 20px;
+            text-align: center;
+        }
+        .welcome{
+            display: inline-block;
+            /* height: 180px; */
+            width: 100%;
+            padding: 40px;
+            /* width: 80%; */
+            border-radius: 20px;
+            color: black;
+            text-align: center;
+            border : 2px solid lightgray;
+        }
+        .circle{
+            position: fixed;
+            right: 5px;
+            bottom: 5px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+            background-color: rgb(231, 146, 42);
+        }
+
+        footer{
+            background-color: rgb(254, 211, 159);
+            padding: 25px;
+            width: 100vw;
+            height: 50px;
+            padding-bottom: 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+                <li>Services</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="section1">
+            <div class="box box1">
+                
+            </div>
+            <div class="box box2">
+                
+            </div>
+        </div>
+        <div class="more">
+            <div class="welcome">
+                <h2>
+                    Welcome to Sigma Web Development Express
+                </h2>
+            </div>
+        </div>
+        <div class="circle">
+
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

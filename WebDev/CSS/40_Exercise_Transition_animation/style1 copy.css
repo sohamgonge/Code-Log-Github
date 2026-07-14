@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --start : 40;
+}
+.xbox{
+    height: 2vw;
+    width: 2vw;
+    background-color: red;
+    border-radius: 70px;
+    position: absolute;
+    bottom: 40vh;
+    left: 0;
+}
+
+.container{
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    background-color: blue;
+}
+@keyframes animateY  {
+    from{
+        bottom:0;
+    }
+    to{
+        bottom : 100%;
+    }
+}
