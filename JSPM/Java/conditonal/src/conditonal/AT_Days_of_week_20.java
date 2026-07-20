@@ -1,6 +1,6 @@
 package conditonal;
 
-public class Dates {
+public class AT_Days_of_week_20 {
 	public static void main(String[] args) {
 		int days = 4;
 		switch(days)

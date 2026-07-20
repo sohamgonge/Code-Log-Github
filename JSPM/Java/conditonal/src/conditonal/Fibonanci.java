@@ -25,6 +25,6 @@ public class Fibonanci {
         	}
         	i++;
         }
-        
+        sc.close();
 	}
 }

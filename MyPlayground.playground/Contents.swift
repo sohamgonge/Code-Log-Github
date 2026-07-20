@@ -201,9 +201,219 @@
 //}
 //var numbers = [20, 19, 7, 12]
 //hasAnyMatches(list: numbers, condition: lessThanTen)
-var numbers = [20, 19, 7 ,12]
-numbers.map({ (number: Int) -> Int in
-    let result = 3 * number
-    return result
-})
+//var numbers = [20, 19, 7 ,12]
+//numbers.map({ (number: Int) -> Int in
+//    let result = 3 * number
+//    return result
+//})
+//var numbers = [20, 19, 7 ,12]
+//numbers.map({ (number: Int) -> Int in
+//    if((number % 2) != 0){
+//        return 0
+//    }
+//    let result = 3 * number
+//    return result
+//})
+//class Shape {
+//    var numberOfSides = 4
+//    let internalAngle = 90;
+//    func simpleDescription() -> String {
+//        return "A shape with \(numberOfSides) sides."
+//    }
+//    func internalGeo(sides : Int) -> Int{
+//        return (360/sides)
+//    }
+//}
+//var shape = Shape()
+//shape.numberOfSides = 7
+//var shapeDescription = shape.simpleDescription()
+//
+//class NamedShape {
+//    var numberOfSides: Int = 0
+//    var name: String
+//
+//
+//    init(name: String) {
+//       self.name = name
+//    }
+//
+//
+//    func simpleDescription() -> String {
+//       return "A shape with \(numberOfSides) sides."
+//    }
+//}
+//class Square: NamedShape {
+//    var sideLength: Double
+//
+//
+//    init(sideLength: Double, name: String) {
+//        self.sideLength = sideLength
+//        super.init(name: name)
+//        numberOfSides = 4
+//    }
+//
+//
+//    func area() -> Double {
+//        return sideLength * sideLength
+//    }
+//
+//
+//    override func simpleDescription() -> String {
+//        return "A square with sides of length \(sideLength)."
+//    }
+//}
+//let test = Square(sideLength: 5.2, name: "my test square")
+//test.area()
+//test.simpleDescription()
+//
+//class Circle: NamedShape{
+//    var radius: Double
+//    
+//    init(radius: Double, name : String) {
+//        self.radius = radius
+//        super.init(name: name)
+//        numberOfSides = 0
+//    }
+//    func area() -> Double {
+//        return 3.14*radius*radius
+//    }
+//    override func simpleDescription() -> String {
+//        return "A circle with radius of length \(radius)"
+//    }
+//}
+//let cirlceTest = Circle(radius : 7,name : "apple")
+//cirlceTest.area()
+//cirlceTest.simpleDescription()
+//
+//class EquilatteralTriangle: NamedShape{
+//    var sideLength: Double = 0.0
+//    
+//    init(sideLength: Double, name: String){
+//        self.sideLength = sideLength
+//        super.init(name: name)
+//        numberOfSides = 3
+//    }
+//    
+//    var perimeter: Double {
+//        get {
+//            return 3.0 * sideLength
+//        }
+//        set {
+//            sideLength = newValue / 3.0
+//        }
+//    }
+//    
+//    override func simpleDescription() -> String {
+//        return "An equilateral triangle with sides of length \(sideLength)."
+//    }
+//}
+//
+//var triangle = EquilatteralTriangle(sideLength: 3.1, name: "a triangle")
+//
+//print(triangle.perimeter)
+//// prints "9.3.
+//triangle.perimeter = 9.9
+//print(triangle.sideLength)
+//// Prints "3.3000000000000003"
+//
+//class TriangleAndSquare{
+//    var triangle: EquilatteralTriangle{
+//        willSet{
+//            square.sideLength = newValue.sideLength
+//        }
+//    }
+//    var square: Square{
+//        willSet{
+//            triangle.sideLength = newValue.sideLength
+//        }
+//    }
+//    init(size: Double, name: String){
+//        square = Square(sideLength: size, name: name)
+//        triangle = EquilatteralTriangle(sideLength: size, name: name)
+//    }
+//}
+//
+//var triangleAndSquare = TriangleAndSquare(size: 10 , name: "another test shape")
+//print(triangleAndSquare.square.sideLength)
+////Prints "10.0".
+//print(triangleAndSquare.triangle.sideLength)
+////Prints "10.0".
+//triangleAndSquare.square = Square(sideLength: 50, name: "larger Square")
+//print(triangleAndSquare.triangle.sideLength)
+//
+//let optionalSquare: Square? = Square(sideLength : 2.5, name: "optional square")
+//let sideLength = optionalSquare?.sideLength
 
+//enum Rank: Int {
+//    case ace = 1
+//    case two, three, four, five, six, seven, eight, nine, ten
+//    case jack, queen, king
+//
+//
+//    func simpleDescription() -> String {
+//        switch self {
+//        case .ace:
+//            return "ace"
+//        case .jack:
+//            return "jack"
+//        case .queen:
+//            return "queen"
+//        case .king:
+//            return "king"
+//        default:
+//            return String(self.rawValue)
+//        }
+//    }
+//}
+//let ace = Rank.ace
+//let aceRawValue = ace.rawValue
+//
+//if let convertedRank = Rank(rawValue: 3) {
+//    let threeDescription = convertedRank.simpleDescription()
+//}
+//
+//enum Suit{
+//    case spades, hearts, diamonds, clubs
+//    func simpleDescription() -> String{
+//        switch self {
+//        case .spades:
+//            return "spades"
+//        
+//        case .hearts:
+//            return "hearts"
+//        
+//        case .diamonds:
+//            return "diamonds"
+//        
+//        case .clubs:
+//            return "clubs"
+//        }
+//    }
+//    func color() -> String {
+//        switch self {
+//        case .clubs, .spades:
+//            return "black"
+//        case .hearts, .diamonds:
+//            return "red"
+//        }
+//    }
+//}
+//
+//let hearts = Suit.hearts
+//let heartsDescription = hearts.simpleDescription()
+
+
+enum ServerResponse{
+    case result(String, String)
+    case failure(String)
+}
+
+let success = ServerResponse.result("6:00 am", "8:09")
+let failure = ServerResponse.failure("Out of cheese.")
+
+switch success{
+case let .result(sunrise, sunset):
+    print("Sunrise is at \(sunrise), and Sunset at \(sunset).")
+case let .failure(message):
+    print("Failure...\(message).")
+}

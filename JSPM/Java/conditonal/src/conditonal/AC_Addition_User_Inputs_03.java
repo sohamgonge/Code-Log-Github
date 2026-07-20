@@ -10,5 +10,6 @@ public class AC_Addition_User_Inputs_03 {
         int num1 = sc.nextInt();
         System.out.println("Your numbers Addition : ");
         System.out.print(num+num1);
+        sc.close();
 	}
 }

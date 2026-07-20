@@ -28,5 +28,6 @@ public class Prime_Check {
         else {
         	System.out.println("It is not a prime number");
         }
+        sc.close();
 	}
 }

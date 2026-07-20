@@ -10,6 +10,7 @@ public class AE_Multiplication_User_05 {
         float num1 = sc.nextFloat();
         System.out.println("Your numbers Multiplication : ");
         System.out.print(num*num1);
+        sc.close();
 		}
 
 }

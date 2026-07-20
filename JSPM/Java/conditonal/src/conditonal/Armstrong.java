@@ -28,5 +28,6 @@ public class Armstrong {
         else {
         	System.out.println("It is not an Amstrong number");
         }
+        sc.close();
 	}
 }

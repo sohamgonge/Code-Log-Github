@@ -7,7 +7,6 @@ public class Palindrome {
 		System.out.print("Enter your number : ");
         int num = sc.nextInt();
         int tot_digi = 0;
-        int half  = 0;
         int reverse = 0;
         int original_num = num;
         while(num>0) {
@@ -33,5 +32,6 @@ public class Palindrome {
         else {
         	System.out.println("It is not a palindrome");
         }
+        sc.close();
 	}     
 }

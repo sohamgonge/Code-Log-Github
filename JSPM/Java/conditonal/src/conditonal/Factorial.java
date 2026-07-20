@@ -13,5 +13,6 @@ public class Factorial {
         	i++;
         }
         System.out.println("Factorial is : " + fac);
+        sc.close();
 	}
 }

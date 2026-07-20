@@ -18,5 +18,6 @@ public class Perfect_number {
         else {
         	System.out.println("It is not a Perfect Number");
         }
+        sc.close();
 	}
 }

@@ -1,6 +1,6 @@
 package conditonal;
 
-public class Months {
+public class AU_Months_of_Year_21 {
 	public static void main(String[] args) {
 		int days = 4;
 		switch(days)

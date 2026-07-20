@@ -1,6 +1,6 @@
 package conditonal;
 
-public class Blood_Check {
+public class AR_Able_to_Donate_Blood_18 {
 	public static void main(String[] args) {
 		int age = 22;
 		int weight = 55;

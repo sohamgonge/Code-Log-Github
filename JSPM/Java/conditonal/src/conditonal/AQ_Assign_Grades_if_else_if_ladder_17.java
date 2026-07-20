@@ -1,6 +1,6 @@
 package conditonal;
 
-public class Grades {
+public class AQ_Assign_Grades_if_else_if_ladder_17 {
 	public static void main(String[] args) {
 		int marks = 80;
 		if(marks > 90) {
