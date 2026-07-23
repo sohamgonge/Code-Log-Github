@@ -6,5 +6,6 @@ public class input {
         int num = sc.nextInt();
         System.out.println("Your number : ");
         System.out.println(num);
+        sc.close();
     }
 }
