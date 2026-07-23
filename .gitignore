@@ -12,3 +12,5 @@ target/
 
 # macOS junk
 .DS_Store
+*.out
+*.exe
