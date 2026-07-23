@@ -438,3 +438,5 @@ struct Card{
         return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
     }
 }
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
