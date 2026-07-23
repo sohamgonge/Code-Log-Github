@@ -1,1 +1,14 @@
+# Eclipse / IDE metadata
 /.metadata/
+.classpath
+.project
+.settings/
+bin/
+
+# Java build artifacts (anywhere in the repo)
+*.class
+out/
+target/
+
+# macOS junk
+.DS_Store
