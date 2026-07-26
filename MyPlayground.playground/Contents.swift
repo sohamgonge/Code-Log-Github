@@ -440,3 +440,20 @@ struct Card{
 }
 let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+func createDeck() -> [Card]{
+    var deck: [Card] = []
+    let ranks: [Rank] = [.ace, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .jack, .queen, .king]
+    let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
+    for suit in suits{
+        for rank in ranks{
+            deck.append(Card(rank: rank, suit: suit))
+        }
+    }
+    return deck
+}
+
+var decks: [Card] = createDeck()
+for cards in decks{
+    print(cards.simpleDescription())
+}

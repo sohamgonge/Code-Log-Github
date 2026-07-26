@@ -7,17 +7,20 @@ using namespace std;
 
 int main()
 {
-    string s = "HELL&";
-    // cout << s.length() << endl;
-    string word ="";
-    for(int i = 0; i < s.length(); i++){
-        cout << "word : " << word  << endl 
-            << " s[i] : " << s[i] << endl
-            <<endl;
-        word=s[i]+word;
+    int n = 5;
+    for(int i  = 1; i <= n;i++){
+        for(int j = 1; j <=n ; j++){
+            if(i==1 || i == n){
+                cout << "* ";
+            }
+            else if(j == 1 || j == n){
+                cout << "* ";
+            }
+            else{
+                cout << "  ";
+            }
+        }
+        cout << endl;
     }
-    cout << "word = " << word << endl;
-    // cout << isalnum(s[4]) << endl;
-    // cout << tolower(s[2]);
     return 0;
 }
