@@ -344,60 +344,60 @@
 //let optionalSquare: Square? = Square(sideLength : 2.5, name: "optional square")
 //let sideLength = optionalSquare?.sideLength
 
-enum Rank: Int {
-    case ace = 1
-    case two, three, four, five, six, seven, eight, nine, ten
-    case jack, queen, king
-
-
-    func simpleDescription() -> String {
-        switch self {
-        case .ace:
-            return "ace"
-        case .jack:
-            return "jack"
-        case .queen:
-            return "queen"
-        case .king:
-            return "king"
-        default:
-            return String(self.rawValue)
-        }
-    }
-}
-let ace = Rank.ace
-let aceRawValue = ace.rawValue
-
-if let convertedRank = Rank(rawValue: 3) {
-    let threeDescription = convertedRank.simpleDescription()
-}
-
-enum Suit{
-    case spades, hearts, diamonds, clubs
-    func simpleDescription() -> String{
-        switch self {
-        case .spades:
-            return "spades"
-        
-        case .hearts:
-            return "hearts"
-        
-        case .diamonds:
-            return "diamonds"
-        
-        case .clubs:
-            return "clubs"
-        }
-    }
-    func color() -> String {
-        switch self {
-        case .clubs, .spades:
-            return "black"
-        case .hearts, .diamonds:
-            return "red"
-        }
-    }
-}
+//enum Rank: Int {
+//    case ace = 1
+//    case two, three, four, five, six, seven, eight, nine, ten
+//    case jack, queen, king
+//
+//
+//    func simpleDescription() -> String {
+//        switch self {
+//        case .ace:
+//            return "ace"
+//        case .jack:
+//            return "jack"
+//        case .queen:
+//            return "queen"
+//        case .king:
+//            return "king"
+//        default:
+//            return String(self.rawValue)
+//        }
+//    }
+//}
+//let ace = Rank.ace
+//let aceRawValue = ace.rawValue
+//
+//if let convertedRank = Rank(rawValue: 3) {
+//    let threeDescription = convertedRank.simpleDescription()
+//}
+//
+//enum Suit{
+//    case spades, hearts, diamonds, clubs
+//    func simpleDescription() -> String{
+//        switch self {
+//        case .spades:
+//            return "spades"
+//        
+//        case .hearts:
+//            return "hearts"
+//        
+//        case .diamonds:
+//            return "diamonds"
+//        
+//        case .clubs:
+//            return "clubs"
+//        }
+//    }
+//    func color() -> String {
+//        switch self {
+//        case .clubs, .spades:
+//            return "black"
+//        case .hearts, .diamonds:
+//            return "red"
+//        }
+//    }
+//}
 //
 //let hearts = Suit.hearts
 //let heartsDescription = hearts.simpleDescription()
@@ -431,29 +431,127 @@ enum Suit{
 //    print("Happy \(mhappy)")
 //}
 
-struct Card{
-    var rank : Rank
-    var suit : Suit
-    func simpleDescription() -> String{
-        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
-    }
-}
-let threeOfSpades = Card(rank: .three, suit: .spades)
-let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+//struct Card{
+//    var rank : Rank
+//    var suit : Suit
+//    func simpleDescription() -> String{
+//        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+//    }
+//}
+//let threeOfSpades = Card(rank: .three, suit: .spades)
+//let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+//
+//func createDeck() -> [Card]{
+//    var deck: [Card] = []
+//    let ranks: [Rank] = [.ace, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .jack, .queen, .king]
+//    let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
+//    for suit in suits{
+//        for rank in ranks{
+//            deck.append(Card(rank: rank, suit: suit))
+//        }
+//    }
+//    return deck
+//}
+//
+//var decks: [Card] = createDeck()
+//for cards in decks{
+//    print(cards.simpleDescription())
+//}
 
-func createDeck() -> [Card]{
-    var deck: [Card] = []
-    let ranks: [Rank] = [.ace, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .jack, .queen, .king]
-    let suits: [Suit] = [.clubs, .diamonds, .hearts, .spades]
-    for suit in suits{
-        for rank in ranks{
-            deck.append(Card(rank: rank, suit: suit))
-        }
-    }
-    return deck
-}
+//                          *****Protocols and Extension*****
+//protocol ExampleProtocol{
+//    var simpleDescription: String{ get }
+//    mutating func adjust()
+//}
+//
+//class SimpleClass: ExampleProtocol{
+//    var simpleDescription: String = "A very simple class."
+//    var anotherProperty: Int = 69105
+//    func adjust(){
+//        simpleDescription += " Now 100% adjusted."
+//        
+//    }
+//}
+//var a = SimpleClass()
+//a.adjust()
+//let aDescription = a.simpleDescription
+//
+//struct SimpleStructure: ExampleProtocol{
+//    var simpleDescription: String = "A simple structure"
+//    mutating func adjust(){
+//        simpleDescription += " (adjusted)"
+//    }
+//}
+//var b = SimpleStructure()
+//b.adjust()
+//let bDescription = b.simpleDescription
+//
+//extension Int: ExampleProtocol {
+//    var simpleDescription: String {
+//        return "The number \(self)"
+//    }
+//    mutating func adjust() {
+//        self += 42
+//    }
+// }
+//print(7.simpleDescription)
+//// Prints "The number 7".
+//
+//let protocolValue: any ExampleProtocol = a
+//print(protocolValue.simpleDescription)
+//// Prints "A very simple class.  Now 100% adjusted."
+//// print(protocolValue.anotherProperty)  // Uncomment to see the error
 
-var decks: [Card] = createDeck()
-for cards in decks{
-    print(cards.simpleDescription())
+//                          *****Error Handling****
+enum PrinterError: Error {
+    case outOfPaper
+    case noToner
+    case onFire
 }
+func send(job: Int, toPrinter printerName: String) throws -> String {
+    if printerName == "Never Has Toner" {
+        throw PrinterError.noToner
+    }
+    return "Job sent"
+}
+do {
+    let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
+    print(printerResponse)
+} catch {
+    print(error)
+}
+// Prints "Job sent".
+do {
+    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+    print(printerResponse)
+} catch PrinterError.onFire {
+    print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+    print("Printer error: \(printerError).")
+} catch {
+    print(error)
+}
+// Prints "Job sent".
+
+let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
+let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
+
+var fridgeIsOpen = false
+let fridgeContent = ["milk", "eggs", "leftovers"]
+
+
+@MainActor func fridgeContains(_ food: String) -> Bool {
+    fridgeIsOpen = true
+    defer {
+        fridgeIsOpen = false
+    }
+
+
+    let result = fridgeContent.contains(food)
+    return result
+}
+if fridgeContains("banana") {
+    print("Found a banana")
+}
+print(fridgeIsOpen)
+// Prints "false".
